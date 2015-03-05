@@ -273,14 +273,41 @@ public class Tacolandzoo {
     class Branch2Class extends JPanel 
     {
        
-    	public void paintComponent(Graphics g) 
+      	public void paintComponent(Graphics g) 
         {
         	
-			g.setColor(new Color(28,198,151));
+			g.setColor(new Color(162,183,240));
 			g.fillRect(0,0,1000,750);
+			
+			g.setColor(new Color(17,179,37));
+			g.fillRect(0,300,1000,750);
 			
 			g.setColor(Color.black);
 			g.fillRect(490,0,3,750);
+			
+Polygon f = new Polygon();
+f.addPoint(160, 300);
+f.addPoint(350, 300);
+f.addPoint(470, 900);
+f.addPoint(40, 900);
+g.fillPolygon(f);
+
+Polygon a = new Polygon();
+a.addPoint(620, 300);
+a.addPoint(810, 300);
+a.addPoint(930, 900);
+a.addPoint(500, 900);
+g.fillPolygon(a);
+
+g.setColor(Color.orange);
+g.fillRect(300,500,150,80);
+g.fillRect(370,580,20, 80);
+
+g.setColor(Color.orange);
+g.fillRect(800,500,150,80);
+g.fillRect(870,580,20, 80);
+
+
 		
         }
     }

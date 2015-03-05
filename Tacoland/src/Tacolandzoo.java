@@ -275,37 +275,47 @@ public class Tacolandzoo {
        
       	public void paintComponent(Graphics g) 
         {
-        	
+        //sky	
 			g.setColor(new Color(162,183,240));
 			g.fillRect(0,0,1000,750);
-			
-			g.setColor(new Color(17,179,37));
+		//land	
+			g.setColor(new Color(34,177,76));
 			g.fillRect(0,300,1000,750);
-			
+		//middle line	
 			g.setColor(Color.black);
 			g.fillRect(490,0,3,750);
-			
+	//left street		
+g.setColor(new Color(224,203,101));
 Polygon f = new Polygon();
 f.addPoint(160, 300);
 f.addPoint(350, 300);
 f.addPoint(470, 900);
 f.addPoint(40, 900);
 g.fillPolygon(f);
-
+	//right street
 Polygon a = new Polygon();
 a.addPoint(620, 300);
 a.addPoint(810, 300);
 a.addPoint(930, 900);
 a.addPoint(500, 900);
 g.fillPolygon(a);
-
+	//left sign
 g.setColor(Color.orange);
-g.fillRect(300,500,150,80);
-g.fillRect(370,580,20, 80);
-
+g.fillRect(50,150,150,80);
+g.fillRect(110,230,20, 80);
+	//right sign
 g.setColor(Color.orange);
-g.fillRect(800,500,150,80);
-g.fillRect(870,580,20, 80);
+g.fillRect(800,150,150,80);
+g.fillRect(870,230,20, 80);
+// left sign text
+g.setColor(Color.black);
+Font thefont=new Font ("Garamond",Font.BOLD,22);
+g.setFont(thefont);
+g.drawString("Small Animals",55 , 200);
+//right sign text
+
+g.setFont(thefont);
+g.drawString("Big Animals",815 , 200);
 
 
 		

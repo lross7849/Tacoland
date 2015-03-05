@@ -195,18 +195,21 @@ public class Tacolandzoo {
    
     	public void paintComponent(Graphics g) 
         {
-        	//sky
+    		//sky
     		g.setColor(new Color(150,200,250));
 			g.fillRect(0, 0, 1000, 750);
 			
+			//Background buildings
+			g.setColor(Color.red);
+			g.fillRect(0, 300, 100, 450);
 			
 			//Gate
 			
 			short i = -2;
 		
 			Graphics2D gd1 = (Graphics2D) g;
-			GradientPaint gd2 = new GradientPaint(25, 1500,
-			new Color(250,250,250), 100, 100,  new Color(0,0,0), true);
+			GradientPaint gd2 = new GradientPaint(25, 200,
+			new Color(150,150,150), 100, 100,  new Color(0,0,0), true);
 			gd1.setPaint(gd2);
 			
 		//	g.setColor(Color.black);
@@ -220,7 +223,7 @@ public class Tacolandzoo {
     		g.setColor(new Color(150,200,250));
 			g.fillRect(250, 300, 500, 450);
 			
-			g.setColor(Color.black);
+			gd1.setPaint(gd2);
 			for (i=-2; i<=1000; i+=20)
 			g.fillRect(i, 300, 8, 6);
 			
@@ -231,9 +234,18 @@ public class Tacolandzoo {
        
 			//Gate Sign
 			g.setColor(new Color(100,100,100));
-			g.fillRect(250, 305, 505, 82);
+			g.fillRect(250, 305, 505, 102);
 			g.setColor(new Color(209,180,12));
-			g.fillRect(255, 306, 495, 80);
+			g.fillRect(255, 306, 495, 100);
+			
+			g.setColor(Color.black);
+			Font abc = new Font("Jokerman",Font.BOLD, 90);
+			g.setFont(abc);
+			g.drawString("Tacoland", 275, 396);
+			
+			//ground
+			g.setColor(new Color(150,150,150));
+			g.fillRect(0, 680, 1000, 70);
         }
     }
 

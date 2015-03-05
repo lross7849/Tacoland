@@ -243,31 +243,48 @@ public class Tacolandzoo {
     	public void paintComponent(Graphics g) 
         {
         	
+    		//Grass
     		g.setColor(new Color(34,177,76));
     		g.fillRect(0,0,1000,750);
-    		//g.setColor(new Color(239,228,176));
+    		//Path Main Oval
     		Graphics2D sk1 = (Graphics2D) g;
 			GradientPaint sk2 = new GradientPaint(25, 1500,
 			new Color(224,203,101), 100, 100,  new Color(239,228,176), true);
 	sk1.setPaint(sk2);
     		g.fillOval(0, 400, 1000, 750);
+    		//Left path
     		Polygon  l= new Polygon();
     		l.addPoint(0, 0);
     		l.addPoint(0, 50);
     		l.addPoint(250, 900);
     		l.addPoint(500, 900);
-    		l.addPoint(100, 0);
+    		l.addPoint(160, 0);
     		g.fillPolygon(l);
+    		//Right path
     		Polygon  r= new Polygon();
     		r.addPoint(1000, 0);
     		r.addPoint(1000, 50);
     		r.addPoint(750, 900);
     		r.addPoint(500, 900);
-    		r.addPoint(900, 0);
+    		r.addPoint(840, 0);
     		g.fillPolygon(r);
+    		//Left Sign
 			g.setColor(new Color(94,57,38));
-			g.fillRect(350,350,100,60);	
-		
+			g.fillRect(305,300,100,60);	
+			g.fillRect(345,300,20,110);	
+			Font SignFont = new Font("Garamond", Font.BOLD,29);
+			g.setFont(SignFont);
+			g.setColor(Color.gray);
+			g.drawString(("Land "), 316, 325);
+			g.drawString(("Animals"), 305, 347);
+			//Right Sign
+			g.setColor(new Color(94,57,38));
+			g.fillRect(305+290,300,100,60);	
+			g.fillRect(345+290,300,20,110);	
+			g.setFont(SignFont);
+			g.setColor(Color.gray);
+			g.drawString(("Aquatic "), 308+290, 325);
+			g.drawString(("Animals"), 305+290, 347);
         }
     }
     class Branch2Class extends JPanel 

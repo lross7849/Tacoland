@@ -2,14 +2,6 @@
 
 import java.awt.*;
 import java.applet.*;
-
-
-
-
-	
-	
-
-
 import java.awt.*;
 import java.awt.event. *;
 
@@ -27,7 +19,8 @@ public class Tacolandzoo {
 
 		final short lsize = 1000;
 		final short hsize = 750;	
-		final short xloc = 200;
+		final short 
+		xloc = 200;
 		final short yloc = 10;
 		
 		WelcomeJframe = new JFrame ("Welcome to Taco Zoo!");
@@ -210,19 +203,37 @@ public class Tacolandzoo {
 			//Gate
 			
 			short i = -2;
-			g.setColor(Color.black);
+		
+			Graphics2D gd1 = (Graphics2D) g;
+			GradientPaint gd2 = new GradientPaint(25, 1500,
+			new Color(250,250,250), 100, 100,  new Color(0,0,0), true);
+			gd1.setPaint(gd2);
+			
+		//	g.setColor(Color.black);
 			while (i<=1000){
 				g.fillRect(i, 200, 8, 550);
-				g.fillOval(i-5, 190, 15, 15);
+				g.fillOval(i-4, 190, 15, 15);
+
+				
 				i+=20;}
 			
     		g.setColor(new Color(150,200,250));
 			g.fillRect(250, 300, 500, 450);
 			
-			//
-			
 			g.setColor(Color.black);
-			g.fillRect(245, 292, 515, 8);
+			for (i=-2; i<=1000; i+=20)
+			g.fillRect(i, 300, 8, 6);
+			
+
+			g.fillRect(0, 292, 1000, 8);
+			g.fillRect(0,210 , 1000, 8);
+			g.fillRect(0,225 , 1000, 8);
+       
+			//Gate Sign
+			g.setColor(new Color(100,100,100));
+			g.fillRect(250, 305, 505, 82);
+			g.setColor(new Color(209,180,12));
+			g.fillRect(255, 306, 495, 80);
         }
     }
 

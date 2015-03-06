@@ -390,8 +390,31 @@ g.drawString("Big Animals",815 , 200);
     	public void paintComponent(Graphics g) 
         {
         	
+    		Graphics2D sk1 = (Graphics2D) g;
+        	//Water
 			g.setColor(Color. blue);
 			g.fillRect(0,0,1000,750);
+			//Bottom Left Grass island
+			g.setColor(new Color(34,177,76));
+    		g.fillRect(0,550,400,750);
+    		g.fillOval(360,550,80,80);
+			g.fillRect(360,590,80,300);
+			//Bottom Left Grass Island Path
+			GradientPaint sk2 = new GradientPaint(25, 1500,
+			new Color(224,203,101), 100, 100,  new Color(239,228,176), true);
+			sk1.setPaint(sk2);
+			Polygon FIP = new Polygon();
+			FIP.addPoint(40,750);
+			FIP.addPoint(40,550);
+			FIP.addPoint(80,550);
+			FIP.addPoint(80,630);
+			FIP.addPoint(440,630);
+			FIP.addPoint(440,670);
+			FIP.addPoint(80,670);
+			FIP.addPoint(80,790);
+			g.fillPolygon(FIP);
+			//Right Middle Island
+			Polygon RMI = new Polygon();
 			
 				
 		

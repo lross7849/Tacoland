@@ -196,34 +196,49 @@ public class Tacolandzoo {
     	public void paintComponent(Graphics g) 
         {
     		//sky
-    		g.setColor(new Color(150,200,250));
+			Graphics2D gd1 = (Graphics2D) g;
+			GradientPaint gd2 = new GradientPaint(1500, 5000,
+			new Color(250,250,250), 1000, 2000,  new Color(120,200,250), true);
+			gd1.setPaint(gd2);
+    		//g.setColor(new Color(150,200,250));
 			g.fillRect(0, 0, 1000, 750);
 			
+			//Sky Clouds
+			g.setColor(new Color(240,240,240));
+			g.fillOval(90,60,150,90);
+			
+			
 			//Background buildings
+			g.setColor(Color.blue);
+			g.fillRect(0,400, 125, 350);
+			
 			g.setColor(Color.red);
 			g.fillRect(0, 300, 100, 450);
+			
+		
 			
 			//Gate
 			
 			short i = -2;
 		
-			Graphics2D gd1 = (Graphics2D) g;
-			GradientPaint gd2 = new GradientPaint(25, 200,
-			new Color(150,150,150), 100, 100,  new Color(0,0,0), true);
-			gd1.setPaint(gd2);
+			Graphics2D gd3 = (Graphics2D) g;
+			GradientPaint gd4 = new GradientPaint(25, 200,
+			new Color(120,120,120), 100, 100,  new Color(0,0,0), true);
+			gd3.setPaint(gd4);
 			
 		//	g.setColor(Color.black);
 			while (i<=1000){
 				g.fillRect(i, 200, 8, 550);
-				g.fillOval(i-4, 190, 15, 15);
+				g.fillOval(i-4, 192, 15, 14);
 
 				
 				i+=20;}
 			
-    		g.setColor(new Color(150,200,250));
+    		//g.setColor(new Color(150,200,250));
+			gd1.setPaint(gd2);
 			g.fillRect(250, 300, 500, 450);
 			
-			gd1.setPaint(gd2);
+			gd3.setPaint(gd4);
 			for (i=-2; i<=1000; i+=20)
 			g.fillRect(i, 300, 8, 6);
 			
@@ -233,15 +248,29 @@ public class Tacolandzoo {
 			g.fillRect(0,225 , 1000, 8);
        
 			//Gate Sign
-			g.setColor(new Color(100,100,100));
-			g.fillRect(250, 305, 505, 102);
-			g.setColor(new Color(209,180,12));
+			Graphics2D gd9 = (Graphics2D) g;
+			GradientPaint gd10 = new GradientPaint(25, 200,
+			new Color(210,210,210), 100, 100,  new Color(209-25,180-25,12-12), true);
+			gd9.setPaint(gd10);
+			g.fillRect(250, 304, 505, 104);
+
+			Graphics2D gd5 = (Graphics2D) g;
+			GradientPaint gd6 = new GradientPaint(25, 200,
+			new Color(250,250,250), 100, 100,  new Color(209,180,12), true);
+			gd5.setPaint(gd6);
+			//g.setColor(new Color(100,100,100));
+			//g.setColor(new Color(209,180,12));
 			g.fillRect(255, 306, 495, 100);
 			
-			g.setColor(Color.black);
+			Graphics2D gd7 = (Graphics2D) g;
+			GradientPaint gd8 = new GradientPaint(25, 200,
+			new Color(60,60,60), 100, 100,  new Color(0,0,0), true);
+			gd7.setPaint(gd8);
+			//g.setColor(Color.black);
 			Font abc = new Font("Jokerman",Font.BOLD, 90);
 			g.setFont(abc);
 			g.drawString("Tacoland", 275, 396);
+			
 			
 			//ground
 			g.setColor(new Color(150,150,150));

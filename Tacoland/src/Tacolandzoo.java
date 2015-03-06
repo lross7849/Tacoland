@@ -334,7 +334,10 @@ public class Tacolandzoo {
       	public void paintComponent(Graphics g) 
         {
         //sky	
-			g.setColor(new Color(162,183,240));
+      		Graphics2D gd1 = (Graphics2D) g;
+			GradientPaint gd2 = new GradientPaint(1500, 5000,
+			new Color(250,250,250), 1000, 2000,  new Color(120,200,250), true);
+			gd1.setPaint(gd2);
 			g.fillRect(0,0,1000,750);
 		//land	
 			g.setColor(new Color(34,177,76));
@@ -374,6 +377,7 @@ g.drawString("Small Animals",55 , 200);
 
 g.setFont(thefont);
 g.drawString("Big Animals",815 , 200);
+
 
 
 		

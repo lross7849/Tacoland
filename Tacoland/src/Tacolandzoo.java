@@ -221,10 +221,10 @@ public class Tacolandzoo {
 
     	//Sky	
     		//Sky color + body
-			Graphics2D gd1 = (Graphics2D) g;
-			GradientPaint gd2 = new GradientPaint(1600, 1000,
+			Graphics2D CL1 = (Graphics2D) g;
+			GradientPaint CL2 = new GradientPaint(1600, 1000,
 			new Color(240,240,250), 1000, 2000,  new Color(120,200,250), true);
-			gd1.setPaint(gd2);
+			CL1.setPaint(CL2);
 			g.fillRect(0, 0, 1000, 750);
 			
 			//Clouds 
@@ -232,19 +232,28 @@ public class Tacolandzoo {
 			g.fillOval(90,60,150,90);
 			
 			
-		//Background trees
-			//First tree
+		//Background tree
+			//Math integers
+			byte m = 41;
+			byte q = 35; 
 			
-			int m = 41;
 			
-			g.setColor(new Color(140,90,10));
+			Graphics2D CL03 = (Graphics2D) g;
+			GradientPaint CL04 = new GradientPaint(200, 150,
+			new Color(220-q-30,175-q-30,73-q-30), 100,100,  new Color(220-q,175-q,73-q), true);
+			CL03.setPaint(CL04);
+			
 			g.fillRect(65-m, 410, 128, 490);
 			
-			gd1.setPaint(gd2);
+			CL1.setPaint(CL2);
 			g.fillOval(55-m, 350, 40, 350);
 			g.fillOval(167-m, 350, 50, 350);
 			
-			g.setColor(new Color(107,180,20));
+			Graphics2D CL05 = (Graphics2D) g;
+			GradientPaint CL06 = new GradientPaint(300, 150,
+			new Color(100,140,40), 100, 100,  new Color(125+10,190+10,45), true);
+			CL05.setPaint(CL06);
+	
 			g.fillOval(10-m,250,200,150);
 			g.fillOval(-20-m,310,120,120);
 			g.fillOval(180-m,310,60,60);
@@ -258,10 +267,10 @@ public class Tacolandzoo {
 		
 		//Gate
 			//Gate's Gradient Color
-			Graphics2D gd3 = (Graphics2D) g;
-			GradientPaint gd4 = new GradientPaint(25, 200,
+			Graphics2D CL3 = (Graphics2D) g;
+			GradientPaint CL4 = new GradientPaint(25, 200,
 			new Color(100,100,100), 100, 100,  new Color(0,0,0), true);
-			gd3.setPaint(gd4);
+			CL3.setPaint(CL4);
 			
 			//Gate's main draw bar loop
 			short i = -2;
@@ -274,13 +283,13 @@ public class Tacolandzoo {
 			
 			
 		//Sky Rectangle Overlay	#1
-			gd1.setPaint(gd2);
+			CL1.setPaint(CL2);
 			g.fillRect(250, 300, 500, 450);
 			
 			
 		//Gate's additional bars
 			//Gate Color
-			gd3.setPaint(gd4);
+			CL3.setPaint(CL4);
 			
 			//Small indent bar loop
 			for (i=-2; i<=1000; i+=20)
@@ -299,21 +308,21 @@ public class Tacolandzoo {
 			
 			
 		//Sky Rectangle	Overlay #2
-			gd1.setPaint(gd2);
+			CL1.setPaint(CL2);
 			g.fillRect(248, 310, 508, 450);
 			
 			
 		//Gate additional bar (insert #1)	
-			gd3.setPaint(gd4);
+			CL3.setPaint(CL4);
 			g.fillRect(0, 292+15, 1000, 8);
 			
 			
 		//Gate Sign border
 			//Gate sign's border color
-			Graphics2D gd9 = (Graphics2D) g;
-			GradientPaint gd10 = new GradientPaint(25, 200,
+			Graphics2D CL9 = (Graphics2D) g;
+			GradientPaint CL10 = new GradientPaint(25, 200,
 			new Color(210,210,210), 100, 100,  new Color(209-25,180-25,12-12), true);
-			gd9.setPaint(gd10);
+			CL9.setPaint(CL10);
 			
 			//Draw gate sign's border
 			g.fillRect(250, 304, 505, 104);
@@ -321,10 +330,10 @@ public class Tacolandzoo {
 			
 		//Gate sign	
 			//Gate sign color
-			Graphics2D gd5 = (Graphics2D) g;
-			GradientPaint gd6 = new GradientPaint(25, 200,
+			Graphics2D CL5 = (Graphics2D) g;
+			GradientPaint CL6 = new GradientPaint(25, 200,
 			new Color(250,250,250), 100, 100,  new Color(209,180,12), true);
-			gd5.setPaint(gd6);
+			CL5.setPaint(CL6);
 			
 			//Draw gate sign
 			g.fillRect(255, 306, 495, 100);
@@ -332,10 +341,10 @@ public class Tacolandzoo {
 			
 		//Sign's Text
 			//Text color
-			Graphics2D gd7 = (Graphics2D) g;
-			GradientPaint gd8 = new GradientPaint(25, 200,
+			Graphics2D CL7 = (Graphics2D) g;
+			GradientPaint CL8 = new GradientPaint(25, 200,
 			new Color(60,60,60), 100, 100,  new Color(0,0,0), true);
-			gd7.setPaint(gd8);
+			CL7.setPaint(CL8);
 			
 			//Font, size and draw string
 			Font abc = new Font("Jokerman",Font.BOLD, 90);
@@ -345,10 +354,10 @@ public class Tacolandzoo {
 			
 		//Disclaimer sign	
 			//Sign Shape
-			Graphics2D gd11 = (Graphics2D) g;
-			GradientPaint gd12 = new GradientPaint(25, 200,
+			Graphics2D CL11 = (Graphics2D) g;
+			GradientPaint CL12 = new GradientPaint(25, 200,
 			new Color(250,250,250), 100, 100,  new Color(220,220,220), true);
-			gd11.setPaint(gd12);
+			CL11.setPaint(CL12);
 			g.fillOval(794, 400, 50, 50);
 			g.fillOval(900, 400, 50, 50);
 			g.fillOval(794, 510, 50, 50);
@@ -473,10 +482,10 @@ public class Tacolandzoo {
       		
       	//Sky	
       		//Sky color + body
-      		Graphics2D gd1 = (Graphics2D) g;
-			GradientPaint gd2 = new GradientPaint(1500, 2000,
+      		Graphics2D CL1 = (Graphics2D) g;
+			GradientPaint CL2 = new GradientPaint(1500, 2000,
 			new Color(250,250,250), 1000, 2000,  new Color(120,200,250), true);
-			gd1.setPaint(gd2);
+			CL1.setPaint(CL2);
 			g.fillRect(0,0,1000,750);
 		
 			
@@ -537,11 +546,11 @@ public class Tacolandzoo {
 		//Button enclosed rectangles
 			//Outer Rectangle
 			g.setColor(new Color(0,0,0));
-			g.fillRect(332, 0, 321, 43);
+			g.fillRect(332+5, 0, 321, 43);
 			
 			//Inner Rectangle
 			g.setColor(new Color(0,250,250));
-			g.fillRect(335, 0, 315, 40);
+			g.fillRect(335+5, 0, 315, 40);
 			
 			
         }

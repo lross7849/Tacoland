@@ -12,10 +12,9 @@ public class Tacolandzoo {
 	private ActionListener action;
 	private JButton Opening, Land, Aquatic, Small, Large, bBunbun, bDolphin, bdragon, 
 	bElephant, bFish, bflamingo, bhabitat, bjPenguin, bjsnake, bleopard, bLion, bMeerkat, 
-	bmonkey, bMuntjac, bPandaBear, bShark, Main1, Main2, Main3;
+	bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
-	boolean move = true;
 	
 	public void MainMethod()
 	{
@@ -39,7 +38,7 @@ public class Tacolandzoo {
 		final Branch1Class Branch1Panel = new Branch1Class();
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
-		//final DrawPenguinPanel penguinpanel = new DrawPenguinPanel();
+	
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 			
@@ -49,9 +48,13 @@ public class Tacolandzoo {
 		Aquatic = new JButton("Aquatic Animals");
 		Small = new JButton("Small Land Animals");
 		Large = new JButton("Large Land Animals");
-		Main1 = new JButton("Back to Gate");
-		Main2 = new JButton("Back to Gate");
-		Main3 = new JButton("Back to Gate");
+		MainA = new JButton("Go to Previous Page");
+		MainS = new JButton("Go to Previous Page");
+		MainL = new JButton("Go to Previous Page");
+		MainB2 = new JButton("Go to Previous Page");
+		MainB1 = new JButton("Go Back to Zoo Gates");
+		bBunbun = new JButton("Bunbun");
+		
 		
 		action = new ActionListener()
 		{
@@ -67,7 +70,9 @@ public class Tacolandzoo {
 					Branch1Jframe.setLocationByPlatform(true);
 					
 					Branch1Panel.add(Land);
+					Branch1Panel.add(MainB1);
 					Branch1Panel.add(Aquatic);
+					
 					
 					Branch1Jframe.getContentPane().add(Branch1Panel);
 					Branch1Jframe.setSize(lsize, hsize);
@@ -85,6 +90,7 @@ public class Tacolandzoo {
 					Branch2Jframe.setLocationByPlatform(true);
 					
 					Branch2Panel.add(Small);
+					Branch2Panel.add(MainB2);
 					Branch2Panel.add(Large);
 					
 					Branch2Jframe.getContentPane().add(Branch2Panel);
@@ -104,8 +110,8 @@ public class Tacolandzoo {
 					AquaticMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					AquaticMapJframe.setLocationByPlatform(true);
 				
-					AquaticPanel.add(Main1);
-					//add animal buttons later
+					AquaticPanel.add(MainA);
+					//add animal Tacolandzoo later
 				
 					AquaticMapJframe.getContentPane().add(AquaticPanel);
 					AquaticMapJframe.setSize(lsize, hsize);
@@ -123,8 +129,9 @@ public class Tacolandzoo {
 					SmallLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					SmallLandAnimalMapJframe.setLocationByPlatform(true);
 				
-					SmallLandAnimalMapPanel.add(Main2);
-					//add animal buttons later
+					SmallLandAnimalMapPanel.add(MainS);
+					SmallLandAnimalMapPanel.add(bBunbun);
+					//add animal Tacolandzoo later
 				
 					SmallLandAnimalMapJframe.getContentPane().add(SmallLandAnimalMapPanel);
 					SmallLandAnimalMapJframe.setSize(lsize, hsize);
@@ -141,8 +148,8 @@ public class Tacolandzoo {
 					LargeLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					LargeLandAnimalMapJframe.setLocationByPlatform(true);
 				
-					LargeLandAnimalMapPanel.add(Main3);
-					//add animal buttons later
+					LargeLandAnimalMapPanel.add(MainL);
+					//add animal Tacolandzoo later
 				
 					LargeLandAnimalMapJframe.getContentPane().add(LargeLandAnimalMapPanel);
 					LargeLandAnimalMapJframe.setSize(lsize, hsize);
@@ -153,25 +160,47 @@ public class Tacolandzoo {
 					Branch2Jframe.setVisible(false);
 				}
 			
-				 if (button == Main1)
+				 if (button == MainA)
 				{
-					WelcomeJframe.setVisible(true);
+					Branch1Jframe.setVisible(true);
 					AquaticMapJframe.setVisible(false);
 			
 				}
 				 
-				 if (button == Main2)
+				 if (button == MainS)
 				 {
-					 WelcomeJframe.setVisible(true);
+					 Branch2Jframe.setVisible(true);
 					 SmallLandAnimalMapJframe.setVisible(false);
 						
 				 }
 			
-				 if (button == Main3)
+				 if (button == MainL)
 				 {
-					 WelcomeJframe.setVisible(true);
+					 Branch2Jframe.setVisible(true);
 					 LargeLandAnimalMapJframe.setVisible(false);
 				 }
+				 
+				 if (button == MainB2)
+				 {
+					 Branch1Jframe.setVisible(true);
+					 Branch2Jframe.setVisible(false);
+				 }
+				 
+				 if (button == MainB1)
+				 {
+					 WelcomeJframe.setVisible(true);
+					 Branch1Jframe.setVisible(false);
+				 }
+				 
+				 
+				 if (button == bBunbun)
+				 {
+						
+				 }
+				 
+				 
+				 
+				 
 			}
 		
 		};
@@ -181,9 +210,12 @@ public class Tacolandzoo {
 		Aquatic.addActionListener(action);
 		Small.addActionListener(action);
 		Large.addActionListener(action);
-		Main1.addActionListener(action);
-		Main2.addActionListener(action);
-		Main3.addActionListener(action);
+		MainA.addActionListener(action);
+		MainS.addActionListener(action);
+		MainL.addActionListener(action);
+		MainB2.addActionListener(action);
+		MainB1.addActionListener(action);
+		bBunbun.addActionListener(action);
 		
 		WelcomePanel.add(Opening);
 		
@@ -269,7 +301,7 @@ public class Tacolandzoo {
 			//Gate's Gradient Color
 			Graphics2D CL3 = (Graphics2D) g;
 			GradientPaint CL4 = new GradientPaint(25, 200,
-			new Color(100,100,100), 100, 100,  new Color(0,0,0), true);
+			new Color(100,100,100), 100, 100,  Color.black, true);
 			CL3.setPaint(CL4);
 			
 			//Gate's main draw bar loop
@@ -546,11 +578,11 @@ public class Tacolandzoo {
 		//Button enclosed rectangles
 			//Outer Rectangle
 			g.setColor(new Color(0,0,0));
-			g.fillRect(332+5, 0, 321, 43);
+			g.fillRect(265, 0, 321+(72*2), 43);
 			
 			//Inner Rectangle
-			g.setColor(new Color(0,250,250));
-			g.fillRect(335+5, 0, 315, 40);
+			g.setColor(new Color(29,147,203));
+			g.fillRect(268, 0, 315+(72*2), 40);
 			
 			
         }

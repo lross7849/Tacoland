@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 	final public class Bunbun {
 
-	    JFrame frame;
+	    JFrame BunbunJframe;
 	    DrawPanel drawPanel;
 
 	    private int oneX = -45;
@@ -21,18 +21,18 @@ import java.awt.Graphics2D;
 	        new Bunbun().go();
 	    }
 
-	    private void go() {
-	        frame = new JFrame("Bun Bun");
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     void go() {
+	        BunbunJframe = new JFrame("Bun Bun");
+	        BunbunJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	        drawPanel = new DrawPanel();
 
-	        frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
+	        BunbunJframe.getContentPane().add(BorderLayout.CENTER, drawPanel);
 
-	        frame.setVisible(true);
-	        frame.setResizable(false);
-	        frame.setSize(900, 835);
-	        frame.setLocation(5, 5);
+	        BunbunJframe.setVisible(true);
+	        BunbunJframe.setResizable(false);
+	        BunbunJframe.setSize(900, 835);
+	        BunbunJframe.setLocation(5, 5);
 	        moveIt();
 	    }
 
@@ -192,7 +192,7 @@ import java.awt.Graphics2D;
 	        }
 	    }
 
-	    private void moveIt() {
+	     void moveIt() {
 	        while(true){
 	            if(oneX >= 800){
 	            	oneX =-45;
@@ -212,7 +212,7 @@ import java.awt.Graphics2D;
 	            try{
 	                Thread.sleep(70);
 	            } catch (Exception exc){}
-	            frame.repaint();
+	            BunbunJframe.repaint();
 	        }
 	    }
 	}

@@ -8,7 +8,8 @@ import java.awt.event. *;
 import javax.swing.*; 
 
 public class Tacolandzoo {
-	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe, LargeLandAnimalMapJframe, AquaticMapJframe;
+	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
+	LargeLandAnimalMapJframe, AquaticMapJframe;
 	private ActionListener action;
 	private JButton Opening, Land, Aquatic, Small, Large, bBunbun, bDolphin, bdragon, 
 	bElephant, bFish, bflamingo, bhabitat, bjPenguin, bjsnake, bleopard, bLion, bMeerkat, 
@@ -38,10 +39,9 @@ public class Tacolandzoo {
 		final Branch1Class Branch1Panel = new Branch1Class();
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
-	
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
-			
+
 		
 		Opening = new JButton("Click Here to go into the zoo!");
 		Land = new JButton("Land Animals");
@@ -195,13 +195,16 @@ public class Tacolandzoo {
 				 
 				 if (button == bBunbun)
 				 {
-						
+			
+
+						 
 				 }
 				 
 				 
 				 
 				 
 			}
+
 		
 		};
 		

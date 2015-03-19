@@ -1,11 +1,18 @@
 //Levi, Jesse, Carlos, Jacob and Lori
 
-import java.awt.*;
-import java.applet.*;
-import java.awt.*;
-import java.awt.event. *;
+//import java.awt.Color;
+import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Polygon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.*; 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
@@ -39,6 +46,8 @@ public class Tacolandzoo {
 		final Branch1Class Branch1Panel = new Branch1Class();
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
+		//final Bunbun x = new Bunbun();
+		//final Bunbun.drawBunbun dbunbun = new Bunbun.drawBunbun();
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 
@@ -196,8 +205,8 @@ public class Tacolandzoo {
 				 if (button == bBunbun)
 				 {
 					 	
+					// BunBunJframe.setVisible(true);
 					 
-						 
 				 }
 				 
 				 

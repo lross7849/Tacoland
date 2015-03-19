@@ -1,6 +1,6 @@
 //Levi, Jesse, Carlos, Jacob and Lori
 
-//import java.awt.Color;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -47,7 +47,7 @@ public class Tacolandzoo {
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
 		//final Bunbun x = new Bunbun();
-		//final Bunbun.drawBunbun dbunbun = new Bunbun.drawBunbun();
+		//final Bunbun.drawBunbun dbunbun = new Bunbun.drawBunbu
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 
@@ -248,7 +248,7 @@ public class Tacolandzoo {
 		{
 			public void run()
 			{
-				new Tacolandzoo().MainMethod();
+			
 			}
 		});
 		
@@ -454,7 +454,7 @@ public class Tacolandzoo {
     		g.setColor(new Color(34,177,76));
     		g.fillRect(0,0,1000,750);
     	
-    		
+    	//new Tacolandzoo().MainMethod();
     	//Main path oval
     		//Main path oval color
     		Graphics2D sk1 = (Graphics2D) g;

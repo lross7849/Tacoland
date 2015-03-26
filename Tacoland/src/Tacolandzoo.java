@@ -1,13 +1,11 @@
 //Levi, Jesse, Carlos, Jacob and Lori
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-//import java.awt.Polygon;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,14 +14,21 @@ import javax.swing.SwingUtilities;
 
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
-	LargeLandAnimalMapJframe, AquaticMapJframe;
+	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe;
 	private ActionListener action;
-	private JButton Opening, Land, Aquatic, Small, Large, bBunbun, bDolphin, bdragon, 
-	bElephant, bFish, bflamingo, bhabitat, bjPenguin, bjsnake, bleopard, bLion, bMeerkat, 
-	bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
+	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, BunbunButton, DolphinButton,
+	DragonButton, ElephantButton, FishButton, FlamingoButton, RabbitButton, PenguinButton, bjsnake, bleopard, bLion, 
+	bMeerkat, bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
-	
+    private int oneX = 7;
+    private int oneY = 967;
+    
+    boolean up = false;
+    boolean down = true;
+    boolean left = false;
+    boolean right = true;
+    
 	public void MainMethod()
 	{
 		
@@ -46,24 +51,40 @@ public class Tacolandzoo {
 		final Branch1Class Branch1Panel = new Branch1Class();
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
-		//final Bunbun x = new Bunbun();
-		//final Bunbun.drawBunbun dbunbun = new Bunbun.drawBunbu
+		
+		final Bunbun Bunn = new Bunbun();
+		final Bunbun.drawBunbun BunbunPanel = Bunn.new drawBunbun();
+		jPenguin pBird = new jPenguin(); 
+		final jPenguin.DrawPenguinPanel PenguinPanel = pBird.new DrawPenguinPanel();
+		final FishClass FishPanel = new FishClass();
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 
 		
-		Opening = new JButton("Click Here to go into the zoo!");
-		Land = new JButton("Land Animals");
-		Aquatic = new JButton("Aquatic Animals");
-		Small = new JButton("Small Land Animals");
-		Large = new JButton("Large Land Animals");
+		WelcomeButton = new JButton("Click Here to go into the zoo!");
+		LandButton = new JButton("Land Animals");
+		AquaticButton = new JButton("Aquatic Animals");
+		SmallButton = new JButton("Small Land Animals");
+		LargeButton = new JButton("Large land Animals");
 		MainA = new JButton("Go to Previous Page");
 		MainS = new JButton("Go to Previous Page");
 		MainL = new JButton("Go to Previous Page");
 		MainB2 = new JButton("Go to Previous Page");
 		MainB1 = new JButton("Go Back to Zoo Gates");
-		bBunbun = new JButton("Bunbun");
+
 		
+		//AquaticButton Animals buttons
+		DolphinButton = new JButton("Dolphine");
+		PenguinButton = new JButton ("Penguin");
+		FishButton = new JButton ("Fish");
+	
+		
+		//SmallButton Animals buttons
+		BunbunButton = new JButton("Bunbun");
+		
+		//LargeButton Animals buttons
+		DragonButton = new JButton("Dragon");
+		ElephantButton = new JButton("Elephant");
 		
 		action = new ActionListener()
 		{
@@ -72,15 +93,15 @@ public class Tacolandzoo {
 				JButton button = (JButton) ae.getSource();			
 				
 				
-				if (button == Opening)
+				if (button == WelcomeButton)
 				{
 					Branch1Jframe = new JFrame("What would you like to see?");
 					Branch1Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					Branch1Jframe.setLocationByPlatform(true);
 					
-					Branch1Panel.add(Land);
+					Branch1Panel.add(LandButton);
 					Branch1Panel.add(MainB1);
-					Branch1Panel.add(Aquatic);
+					Branch1Panel.add(AquaticButton);
 					
 					
 					Branch1Jframe.getContentPane().add(Branch1Panel);
@@ -92,15 +113,15 @@ public class Tacolandzoo {
 					WelcomeJframe.setVisible(false);
 				}
 				
-				else if (button == Land)
+				else if (button == LandButton)
 				{
 					Branch2Jframe = new JFrame("Pick one of the two catigorizes.");
 					Branch2Jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					Branch2Jframe.setLocationByPlatform(true);
 					
-					Branch2Panel.add(Small);
+					Branch2Panel.add(SmallButton);
 					Branch2Panel.add(MainB2);
-					Branch2Panel.add(Large);
+					Branch2Panel.add(LargeButton);
 					
 					Branch2Jframe.getContentPane().add(Branch2Panel);
 					Branch2Jframe.setSize(lsize,hsize);
@@ -112,14 +133,19 @@ public class Tacolandzoo {
 				
 				}
 			
-				else if (button == Aquatic)
+				else if (button == AquaticButton)
 				{
 				
-					AquaticMapJframe = new JFrame("Aquatic Map: Pick the animal of your choice. ");
+					AquaticMapJframe = new JFrame("AquaticButton Map: Pick the animal of your choice. ");
 					AquaticMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					AquaticMapJframe.setLocationByPlatform(true);
 				
 					AquaticPanel.add(MainA);
+					AquaticPanel.add(DolphinButton);
+					AquaticPanel.add(PenguinButton);
+					AquaticPanel.add(FishButton);
+
+			
 					//add animal Tacolandzoo later
 				
 					AquaticMapJframe.getContentPane().add(AquaticPanel);
@@ -132,15 +158,15 @@ public class Tacolandzoo {
 				
 				}
 					
-				else if (button == Small)
+				else if (button == SmallButton)
 				{
 					SmallLandAnimalMapJframe = new JFrame("Small Land Animal Map: Pick the animal of your choice. ");
 					SmallLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					SmallLandAnimalMapJframe.setLocationByPlatform(true);
 				
 					SmallLandAnimalMapPanel.add(MainS);
-					SmallLandAnimalMapPanel.add(bBunbun);
-					//add animal Tacolandzoo later
+					SmallLandAnimalMapPanel.add(BunbunButton);
+		
 				
 					SmallLandAnimalMapJframe.getContentPane().add(SmallLandAnimalMapPanel);
 					SmallLandAnimalMapJframe.setSize(lsize, hsize);
@@ -151,13 +177,15 @@ public class Tacolandzoo {
 					Branch2Jframe.setVisible(false);
 				}
 			
-				else if (button == Large)
+				else if (button == LargeButton)
 				{
 					LargeLandAnimalMapJframe = new JFrame("Large Land Animal Map: Pick the animal of your choice. ");
 					LargeLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					LargeLandAnimalMapJframe.setLocationByPlatform(true);
 				
 					LargeLandAnimalMapPanel.add(MainL);
+					LargeLandAnimalMapPanel.add(DragonButton);
+					LargeLandAnimalMapPanel.add(ElephantButton);
 					//add animal Tacolandzoo later
 				
 					LargeLandAnimalMapJframe.getContentPane().add(LargeLandAnimalMapPanel);
@@ -202,10 +230,66 @@ public class Tacolandzoo {
 				 }
 				 
 				 
-				 if (button == bBunbun)
+				 if (button == BunbunButton){
+					 
+					 BunbunJframe = new JFrame("It is a penguin");
+					 BunbunJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 BunbunJframe.setLocationByPlatform(true);
+					
+					
+					
+					BunbunJframe.getContentPane().add(BunbunPanel);
+					BunbunJframe.setSize(lsize, hsize);
+					BunbunJframe.setLocation(xloc,yloc);
+					BunbunJframe.setResizable(true);
+						
+					BunbunJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+					 
+				 }
+						 
+				 
+				 
+				 if (button == PenguinButton){
+					 
+					 
+					 PenguinJframe = new JFrame("It is a penguin");
+					 PenguinJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 PenguinJframe.setLocationByPlatform(true);
+					
+					
+					
+					 PenguinJframe.getContentPane().add(PenguinPanel);
+					 PenguinJframe.setSize(lsize, hsize);
+					 PenguinJframe.setLocation(xloc,yloc);
+					 PenguinJframe.setResizable(true);
+						
+					 PenguinJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+				 }
+				 
+				 if (button == FishButton)
 				 {
 					 	
-					// BunBunJframe.setVisible(true);
+					
+						FishJframe = new JFrame("It is a Fish");
+						FishJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						FishJframe.setLocationByPlatform(true);
+					
+					
+				
+						//add animal Tacolandzoo later
+					
+						FishJframe.getContentPane().add(FishPanel);
+						FishJframe.setSize(lsize, hsize);
+						FishJframe.setLocation(xloc,yloc);
+						FishJframe.setResizable(true);
+						
+						FishJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					
 					 
 				 }
 				 
@@ -217,25 +301,36 @@ public class Tacolandzoo {
 		
 		};
 		
-		Opening.addActionListener(action);
-		Land.addActionListener(action);
-		Aquatic.addActionListener(action);
-		Small.addActionListener(action);
-		Large.addActionListener(action);
+		WelcomeButton.addActionListener(action);
+		LandButton.addActionListener(action);
+		AquaticButton.addActionListener(action);
+		SmallButton.addActionListener(action);
+		LargeButton.addActionListener(action);
 		MainA.addActionListener(action);
 		MainS.addActionListener(action);
 		MainL.addActionListener(action);
 		MainB2.addActionListener(action);
 		MainB1.addActionListener(action);
-		bBunbun.addActionListener(action);
 		
-		WelcomePanel.add(Opening);
+		DolphinButton.addActionListener(action);
+		PenguinButton.addActionListener(action);
+		FishButton.addActionListener(action);
+
+		
+		BunbunButton.addActionListener(action);
+		
+		DragonButton.addActionListener(action);
+		ElephantButton.addActionListener(action);
+		
+		
+		WelcomePanel.add(WelcomeButton);
 		
 		WelcomeJframe.getContentPane().add(WelcomePanel);
 		WelcomeJframe.setSize(lsize, hsize);
 		WelcomeJframe.setLocation(xloc, yloc);
 		WelcomeJframe.setResizable(false);
 		WelcomeJframe.setVisible(true);
+
 	
 
 	}
@@ -248,7 +343,7 @@ public class Tacolandzoo {
 		{
 			public void run()
 			{
-			
+				
 			}
 		});
 		
@@ -335,7 +430,7 @@ public class Tacolandzoo {
 			//Gate Color
 			CL3.setPaint(CL4);
 			
-			//Small indent bar loop
+			//SmallButton indent bar loop
 			for (i=-2; i<=1000; i+=20)
 			g.fillRect(i, 300, 8, 6);
 			
@@ -454,7 +549,7 @@ public class Tacolandzoo {
     		g.setColor(new Color(34,177,76));
     		g.fillRect(0,0,1000,750);
     	
-    	//new Tacolandzoo().MainMethod();
+    	//
     	//Main path oval
     		//Main path oval color
     		Graphics2D sk1 = (Graphics2D) g;
@@ -488,7 +583,7 @@ public class Tacolandzoo {
     		
     	//Left Sign
 			//Draw left sign shape
-    		g.setColor(new Color(220,140,51));
+    		g.setColor(new Color(220-20,140-20,51-20));
 			g.fillRect(305,300,100,60);	
 			g.fillRect(345,300,20,110);	
 			
@@ -502,7 +597,7 @@ public class Tacolandzoo {
 			
 		//Right Sign
 			//Draw right sign shape
-			g.setColor(new Color(220,140,51));
+			g.setColor(new Color(220-20,140-20,51-20));
 			g.fillRect(305+290,300,100,60);	
 			g.fillRect(345+290,300,20,110);	
 			
@@ -539,7 +634,7 @@ public class Tacolandzoo {
 		
 			
 		//Dividing line	
-			g.setColor(Color.black);
+			g.setColor(new Color(0,0,0));
 			g.fillRect(490,0,3,750);
 	
 			
@@ -607,7 +702,7 @@ public class Tacolandzoo {
     	public void paintComponent(Graphics g) 
         {
         
-    	/** Class that is drawn after Branch1Class (Aquatic) in our Tacoland project **/	
+    	/** Class that is drawn after Branch1Class (AquaticButton) in our Tacoland project **/	
     		
     		Graphics2D sk1 = (Graphics2D) g;
         	
@@ -652,6 +747,7 @@ public class Tacolandzoo {
     	public void paintComponent(Graphics g) 
         {
         	
+    		
 			g.setColor(Color. red);
 			
 			g.fillRect(0,0,1000,750);
@@ -668,17 +764,112 @@ public class Tacolandzoo {
     	public void paintComponent(Graphics g) 
         {
         	
-			g.setColor(Color.green);
+			g.setColor(new Color(240,210,100));
 			g.fillRect(0,0,1000,750);
 			
-				
+			//new Tacolandzoo().MainMethod();
 		
         }
     }
-    
-    
 
 
+
+    class FishClass extends JPanel
+    {
+    	
+    	
+    	public void paintComponent(Graphics g) 
+        {
+        	
+    		//sky
+    		g.setColor(new Color (94,175,242));
+    		g.fillRect(0, 0, 1700, 400);
+    		//sun
+    		g.setColor(new Color (254,209,29));
+    		g.fillOval(100,100,200,200);
+    		//clouds
+    		g.setColor(new Color(193,193,193));
+    		// top right
+    	    g.fillOval(300, 20, 150, 50);
+    		g.fillOval(400, 20, 150, 50);
+    	    g.fillOval(500, 20, 150, 50);
+    	    g.fillOval(600, 20, 150, 50);
+    	    g.fillOval(700, 20, 150, 50);
+    		// top left
+    		 g.fillOval(1000, 20, 150, 50);
+    		 g.fillOval(1100, 20, 150, 50);
+    		 g.fillOval(1200, 20, 150, 50);
+    		//bottom right
+    		 g.fillOval(250, 40, 150, 50);
+    		 g.fillOval(350, 40, 150, 50);
+    		 g.fillOval(450, 40, 150, 50);
+    		 g.fillOval(550, 40, 150, 50);
+    		 g.fillOval(650, 40, 150, 50);
+    		 g.fillOval(750, 40, 150, 50);
+    		//bottom left
+    		 g.fillOval(950, 40, 150, 50);
+    		 g.fillOval(1050, 40, 150, 50);
+    		 g.fillOval(1150, 40, 150, 50);
+    		 g.fillOval(1250, 40, 150, 50);
+    		
+    		
+    		
+    		//ocean
+    		g.setColor(new Color (0,56,249));
+    		g.fillRect(0,400,1700,400);
+    		//fish
+    		g.setColor(new Color (249,107,2));
+    		g.fillOval(500,600,100,60);
+    		//fin
+    		g.setColor(new Color (253,139,55));
+    		g.fillRect(515,620,45,20);
+    		//eyeball 
+    		g.setColor(new Color (0,0,0));
+    		g.fillOval(575,610,15,15);
+    		//plants
+    		g.setColor(new Color (56,163,41));
+    		g.fillRect(50,700,30,200);
+    		g.fillRect(250,650,30,250);
+    		g.fillRect(450,700,10,165);
+    		g.fillRect(520,620,20,400);
+    		g.fillRect(580,670,15,350);
+    		g.fillRect(700,500,25,350);
+    		g.fillRect(850,600,15,350);
+    		g.fillRect(920,700,30,200);
+    		g.fillRect(1000,600,20,350);
+    		g.fillRect(1200,460,23,700);
+    		g.fillRect(1400,600,20,250);
+    		//boat
+    		g.setColor(new Color (85,99,80));
+    		g.fillArc(700,140,700,400,180,180);
+    		g.setColor(new Color (243,7,26));
+    		g.fillRect(750,170,600,170);
+    		
+    		//g.setColor
+    		g.fillRect(800,120,50,100);
+    		//pollution
+    		g.setColor(new Color (46,47,48));
+    		g.fillOval(750,100,80,20);
+    		g.setColor(new Color (208,209,210));
+    		g.fillOval(710,100,80,20);
+    		g.fillOval(730,110,80,20);
+    		g.setColor(new Color (46,47,48));
+    		g.fillOval(780,110,80,20);
+    		//window
+    		g.setColor(new Color (171,230,252));
+    		g.fillRect(1240,190,60,100);
+    		g.setColor(new Color (0,0,0));
+    		g.fillRect(1265,190,10,100);
+    		g.fillRect(1240,235,60,10);
+			
+    		
+		
+        }
+    	
+    	
+    }
+
+    
 }
 
 

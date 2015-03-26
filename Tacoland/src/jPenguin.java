@@ -7,7 +7,7 @@ import java.awt.*;
 
 final public class jPenguin {
 
-    JFrame frame;
+    JFrame pegJframe;
     DrawPenguinPanel drawPenguinPanel;
 
     private short oneX = 7;
@@ -23,17 +23,17 @@ final public class jPenguin {
     }
 
     private void go() {
-        frame = new JFrame("jframe Penguin");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pegJframe = new JFrame("jframe Penguin");
+        pegJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         drawPenguinPanel = new DrawPenguinPanel();
 
-        frame.getContentPane().add(BorderLayout.CENTER, drawPenguinPanel);
+        pegJframe.getContentPane().add(BorderLayout.CENTER, drawPenguinPanel);
 
-        frame.setVisible(true);
-        frame.setResizable(false);
-        frame.setSize(960, 900);
-        frame.setLocation(375, 55);
+        pegJframe.setVisible(true);
+        pegJframe.setResizable(false);
+        pegJframe.setSize(960, 900);
+        pegJframe.setLocation(375, 55);
         moveIt();
     }
 
@@ -211,7 +211,7 @@ final public class jPenguin {
             try{
                 Thread.sleep(10);
             } catch (Exception exc){}
-            frame.repaint();
+            pegJframe.repaint();
         }
     }
 }

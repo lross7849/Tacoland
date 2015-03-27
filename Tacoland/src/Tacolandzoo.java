@@ -1,4 +1,5 @@
 //Levi, Jesse, Carlos, Jacob and Lori
+//new Tacolandzoo().MainMethod();
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,11 +15,11 @@ import javax.swing.SwingUtilities;
 
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
-	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe;
+	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe;
 	private ActionListener action;
 	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, BunbunButton, DolphinButton,
-	DragonButton, ElephantButton, FishButton, FlamingoButton, RabbitButton, PenguinButton, bjsnake, bleopard, bLion, 
-	bMeerkat, bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
+	DragonButton, ElephantButton, FishButton, FlamingoButton, RabbitButton, PenguinButton, SnakeButton, bleopard, 
+	LionButton, bMeerkat, bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
     private int oneX = 7;
@@ -39,28 +40,40 @@ public class Tacolandzoo {
 		final short yloc = 10;
 		
 	
-		
 		WelcomeJframe = new JFrame ("Welcome to Tacoland Zoo!");
-		
 		WelcomeJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		WelcomeJframe.setLocationByPlatform(true);
 		
 		
+	//Classes extending DrawPanels
+		//
 		WelcomeClass WelcomePanel = new WelcomeClass();
-		
 		final Branch1Class Branch1Panel = new Branch1Class();
 		final Branch2Class Branch2Panel = new Branch2Class();
 		final AquaticClass AquaticPanel = new AquaticClass();
-		
-		final Bunbun Bunn = new Bunbun();
-		final Bunbun.drawBunbun BunbunPanel = Bunn.new drawBunbun();
-		jPenguin pBird = new jPenguin(); 
-		final jPenguin.DrawPenguinPanel PenguinPanel = pBird.new DrawPenguinPanel();
-		final FishClass FishPanel = new FishClass();
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 
+		//Aquatic Land Animals' classes extending DrawPanels
+		final jPenguin pBird = new jPenguin(); 
+		final jPenguin.DrawPenguinPanel PenguinPanel = pBird.new DrawPenguinPanel();
 		
+		final FishClass FishPanel = new FishClass();
+		
+		
+		//Small Land Animals' classes extending DrawPanels
+		final Bunbun Bunn = new Bunbun();
+		final Bunbun.drawBunbun BunbunPanel = Bunn.new drawBunbun();
+		
+		final habitat Rab = new habitat();
+		final habitat.DrawRabbit drawRabbitPanel = Rab.new DrawRabbit();
+
+		
+		//Large Land Animals' classes extending DrawPanels
+		
+		
+	//Declaring buttons and their names
+		//Zoo's main slide buttons
 		WelcomeButton = new JButton("Click Here to go into the zoo!");
 		LandButton = new JButton("Land Animals");
 		AquaticButton = new JButton("Aquatic Animals");
@@ -73,18 +86,20 @@ public class Tacolandzoo {
 		MainB1 = new JButton("Go Back to Zoo Gates");
 
 		
-		//AquaticButton Animals buttons
+		//Aquatic Animals buttons
 		DolphinButton = new JButton("Dolphine");
 		PenguinButton = new JButton ("Penguin");
 		FishButton = new JButton ("Fish");
 	
 		
-		//SmallButton Animals buttons
+		//Small Animals buttons
 		BunbunButton = new JButton("Bunbun");
+		RabbitButton = new JButton("Rabbit");
 		
-		//LargeButton Animals buttons
+		//Large Animals buttons
 		DragonButton = new JButton("Dragon");
 		ElephantButton = new JButton("Elephant");
+		
 		
 		action = new ActionListener()
 		{
@@ -166,7 +181,7 @@ public class Tacolandzoo {
 				
 					SmallLandAnimalMapPanel.add(MainS);
 					SmallLandAnimalMapPanel.add(BunbunButton);
-		
+					SmallLandAnimalMapPanel.add(RabbitButton);
 				
 					SmallLandAnimalMapJframe.getContentPane().add(SmallLandAnimalMapPanel);
 					SmallLandAnimalMapJframe.setSize(lsize, hsize);
@@ -249,6 +264,25 @@ public class Tacolandzoo {
 					 
 				 }
 						 
+				 if (button == RabbitButton)
+				 {
+					 
+					 RabbitJframe = new JFrame("It is a Rabbit");
+					 RabbitJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 RabbitJframe.setLocationByPlatform(true);
+					
+					
+					
+					 RabbitJframe.getContentPane().add(drawRabbitPanel);
+					 RabbitJframe.setSize(lsize, hsize);
+					 RabbitJframe.setLocation(xloc,yloc);
+					 RabbitJframe.setResizable(true);
+						
+					 RabbitJframe.setVisible(true);
+						SmallLandAnimalMapJframe.setVisible(false);
+					 
+					 
+				 }
 				 
 				 
 				 if (button == PenguinButton){
@@ -301,6 +335,7 @@ public class Tacolandzoo {
 		
 		};
 		
+	//Action Listeners
 		WelcomeButton.addActionListener(action);
 		LandButton.addActionListener(action);
 		AquaticButton.addActionListener(action);
@@ -312,13 +347,16 @@ public class Tacolandzoo {
 		MainB2.addActionListener(action);
 		MainB1.addActionListener(action);
 		
+		//Aquatic Animals' Action Listeners
 		DolphinButton.addActionListener(action);
 		PenguinButton.addActionListener(action);
 		FishButton.addActionListener(action);
 
-		
+		//Small Land Animals' Action Listeners
 		BunbunButton.addActionListener(action);
+		RabbitButton.addActionListener(action);
 		
+		//Large Land Animals' Action Listeners
 		DragonButton.addActionListener(action);
 		ElephantButton.addActionListener(action);
 		
@@ -767,7 +805,7 @@ public class Tacolandzoo {
 			g.setColor(new Color(240,210,100));
 			g.fillRect(0,0,1000,750);
 			
-			//new Tacolandzoo().MainMethod();
+			
 		
         }
     }

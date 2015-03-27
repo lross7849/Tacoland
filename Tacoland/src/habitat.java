@@ -8,7 +8,7 @@ final public class habitat {
 
 JFrame frame;
 
-DrawPanel drawPanel;
+DrawRabbit drawRabbitPanel;
 
 boolean up = false;
 
@@ -32,9 +32,9 @@ frame = new JFrame("Test");
 
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-drawPanel = new DrawPanel();
+drawRabbitPanel = new DrawRabbit();
 
-frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
+frame.getContentPane().add(BorderLayout.CENTER, drawRabbitPanel);
 
 frame.setVisible(true);
 
@@ -48,7 +48,7 @@ moveIt();
 
 }
 
-class DrawPanel extends JPanel {
+class DrawRabbit extends JPanel {
 	
 //sky
 public void paintComponent(Graphics g) {

@@ -382,7 +382,7 @@ public class Tacolandzoo {
 		{
 			public void run()
 			{
-				new Tacolandzoo().MainMethod(); 
+			
 			}
 		});
 		

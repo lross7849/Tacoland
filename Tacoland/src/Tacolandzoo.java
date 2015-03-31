@@ -1,5 +1,5 @@
 //Levi, Jesse, Carlos, Jacob and Lori
-/*new Tacolandzoo().MainMethod(); */
+//new Tacolandzoo().MainMethod(); 
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -382,7 +382,7 @@ public class Tacolandzoo {
 		{
 			public void run()
 			{
-				
+				new Tacolandzoo().MainMethod(); 
 			}
 		});
 		
@@ -743,10 +743,13 @@ public class Tacolandzoo {
         
     	/** Class that is drawn after Branch1Class (AquaticButton) in our Tacoland project **/	
     		
-    		Graphics2D sk1 = (Graphics2D) g;
-        	
+    
+			Graphics2D CL05 = (Graphics2D) g;
+			GradientPaint CL06 = new GradientPaint(1000, 150,
+			new Color((255+66)/2,(255+160)/2,(255+200)/2), 100, 100,  new Color(66,160,200), true);
+			CL05.setPaint(CL06);
     		//Water
-			g.setColor(new Color(56,56,250));
+		//	g.setColor(new Color(56,56,250));
 			g.fillRect(0,0,1000,750);
 		
 			
@@ -756,9 +759,11 @@ public class Tacolandzoo {
     		g.fillOval(360,550,80,80);
 			g.fillRect(360,590,80,300);	
 		//Bottom Left Grass Island Path
-			GradientPaint sk2 = new GradientPaint(25, 1500,
-			new Color(224,203,101), 100, 100,  new Color(239,228,176), true);
-			sk1.setPaint(sk2);
+			Graphics2D dr1 = (Graphics2D)g;
+			GradientPaint dr  = new GradientPaint (25,1500,
+					new Color (224,203,101),100,100, new Color(239,228,176),true);
+			dr1.setPaint(dr);
+					
 			Polygon FIP = new Polygon();
 			FIP.addPoint(40,750);
 			FIP.addPoint(40,550);

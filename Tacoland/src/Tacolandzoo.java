@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -744,8 +745,8 @@ public class Tacolandzoo {
     		
     		Graphics2D sk1 = (Graphics2D) g;
         	
-    	//Water
-			g.setColor(new Color(130,130,250));
+    		//Water
+			g.setColor(new Color(56,56,250));
 			g.fillRect(0,0,1000,750);
 		
 			
@@ -753,9 +754,7 @@ public class Tacolandzoo {
 			g.setColor(new Color(34,177,76));
     		g.fillRect(0,550,400,750);
     		g.fillOval(360,550,80,80);
-			g.fillRect(360,590,80,300);
-		
-			
+			g.fillRect(360,590,80,300);	
 		//Bottom Left Grass Island Path
 			GradientPaint sk2 = new GradientPaint(25, 1500,
 			new Color(224,203,101), 100, 100,  new Color(239,228,176), true);
@@ -770,10 +769,67 @@ public class Tacolandzoo {
 			FIP.addPoint(80,670);
 			FIP.addPoint(80,790);
 			g.fillPolygon(FIP);
-			
-			
 		//Right Middle Island
+
 			Polygon RMI = new Polygon();
+					//Bridge 1 points V
+			RMI.addPoint(650, 500);
+			RMI.addPoint(750, 600);
+					//Bridge 1 Pontys ^
+			RMI.addPoint(811, 595);
+			RMI.addPoint(841, 575);
+			RMI.addPoint(857, 548);
+			RMI.addPoint(862, 523);
+			RMI.addPoint(852, 345);
+			RMI.addPoint(839, 167);
+			RMI.addPoint(790, 130);
+			RMI.addPoint(690, 120);
+			RMI.addPoint(670, 126);
+			RMI.addPoint(550, 136);
+			RMI.addPoint(500, 186);
+			RMI.addPoint(480, 240);
+			RMI.addPoint(500, 270);
+			RMI.addPoint(530, 285);
+			RMI.addPoint(500, 270);
+			RMI.addPoint(530, 288);
+			RMI.addPoint(620, 320);
+			g.setColor(new Color(34,177,76));
+			g.fillPolygon(RMI);	
+			g.fillOval(740, 130, 100, 100);	
+		byte b = 35;
+			
+			//Bridge 1
+			g.setColor(new Color(79+b,50+b,6+b));
+			Polygon bridge1 = new Polygon();
+			bridge1.addPoint(750-25, 600-25); //top right
+			bridge1.addPoint(440,675); // bottom top
+			bridge1.addPoint(440,625); //bottom b
+			bridge1.addPoint(650+25, 500+25); //t l
+			g.fillPolygon(bridge1);
+		//Ice island
+			Polygon II = new Polygon();
+			II.addPoint(0,0);
+			II.addPoint(0,190);
+			II.addPoint(115,300);
+			II.addPoint(199,280);
+			II.addPoint(237,329);
+			II.addPoint(300,350);
+			II.addPoint(400,300);
+			II.addPoint(480, 240);
+			II.addPoint(500, 186);
+			II.addPoint(550, 136);
+			II.addPoint(600,30);
+			II.addPoint(560,0);
+			g.setColor(new Color(209,243,239));
+			g.fillPolygon(II);
+		//Bridge 2
+			Polygon B2 = new Polygon();
+			B2.addPoint(35,223);
+			B2.addPoint(35,550);
+			B2.addPoint(85,550);
+			B2.addPoint(85,271);
+			g.setColor(new Color(79+b,50+b,6+b));
+			g.fillPolygon(B2);
 					
         }
     }

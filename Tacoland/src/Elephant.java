@@ -7,9 +7,9 @@ public class Elephant extends Applet
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+//	private static final long serialVersionUID = 1L;
 
-	public void paint(Graphics g)
+	public void DrawElephant(Graphics g)
 	{
 		drawHabitat(g);
 		drawAnimal(g);

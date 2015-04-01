@@ -3,7 +3,7 @@ import java.applet.*;
 
 public class dragon extends Applet{
 	
-	public void paint(Graphics g)
+	public void DrawDragon(Graphics g)
 	{
 		drawAnimal(g);
 		drawHabitat(g);

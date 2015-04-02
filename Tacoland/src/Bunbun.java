@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 	final public class Bunbun {
 
 	    JFrame frame;
-	    drawBunbun drawBunbun;
+	    DrawBunbun CoolBunbun;
 
 	    private int oneX = -45;
 
@@ -25,9 +25,9 @@ import java.awt.Graphics2D;
 	        frame = new JFrame("Bun Bun");
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	        drawBunbun = new drawBunbun();
+	        CoolBunbun = new DrawBunbun();
 
-	        frame.getContentPane().add(BorderLayout.CENTER, drawBunbun);
+	        frame.getContentPane().add(BorderLayout.CENTER, CoolBunbun);
 
 	        frame.setVisible(true);
 	        frame.setResizable(false);
@@ -36,7 +36,7 @@ import java.awt.Graphics2D;
 	        moveIt();
 	    }
 
-	    public class drawBunbun extends JPanel {
+	    public class DrawBunbun extends JPanel {
 	        public void paintComponent(Graphics g) {
 	       //sky
 	        	Graphics2D g2d = (Graphics2D) g;

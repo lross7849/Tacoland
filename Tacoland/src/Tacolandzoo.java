@@ -1,5 +1,5 @@
 //Levi, Jesse, Carlos, Jacob and Lori
-//new Tacolandzoo().MainMethod(); 
+//
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -64,7 +64,7 @@ public class Tacolandzoo {
 		
 		//Small Land Animals' classes extending DrawPanels
 		final Bunbun Bunn = new Bunbun();
-		final Bunbun.drawBunbun BunbunPanel = Bunn.new drawBunbun();
+		final Bunbun.DrawBunbun BunbunPanel = Bunn.new DrawBunbun();
 		
 		final habitat Rab = new habitat();
 		final habitat.DrawRabbit drawRabbitPanel = Rab.new DrawRabbit();
@@ -382,7 +382,8 @@ public class Tacolandzoo {
 		{
 			public void run()
 			{
-			
+				//The thing that creates the greatest impact on the project
+				//new Tacolandzoo().MainMethod(); 
 			}
 		});
 		

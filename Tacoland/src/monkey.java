@@ -6,7 +6,7 @@ import java.applet.*;
 
 public class monkey extends Applet{
 	
-	public void paint(Graphics g)
+	public void DrawMonkey(Graphics g)
 	{
 		drawHabitat(g);
 		drawAnimal(g);

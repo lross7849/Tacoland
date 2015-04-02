@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.GradientPaint;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -13,16 +14,24 @@ public class Tyrannosaurus_Rex extends JFrame {
 	public Tyrannosaurus_Rex(){
         super("Tyrannosaurus_Rex");
         
-        setContentPane(new DrawPane());
+        setContentPane(new DrawTRex());
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setSize(400, 400);
 
         setVisible(true); 
+        
+
    }
 	
-	class DrawPane extends JPanel{
+  
+
+
+
+	
+	
+	class DrawTRex extends JPanel{
 	public void paint(Graphics g)
 	{
 		Graphics2D g2d = (Graphics2D) g;
@@ -30,6 +39,7 @@ public class Tyrannosaurus_Rex extends JFrame {
 		drawAnimal(g2d);
 	}
 
+	
 	private void drawAnimal(Graphics2D g)
 	{
 		 GradientPaint gp1 = new GradientPaint(5, 5,

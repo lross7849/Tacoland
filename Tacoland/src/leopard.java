@@ -8,7 +8,7 @@ import java.applet.*;
 
 public class leopard extends Applet{
 	
-	public void paint(Graphics g)
+	public void DrawLeopard(Graphics g)
 	{
 		drawHabitat(g);
 		drawAnimal(g);

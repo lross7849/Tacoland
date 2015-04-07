@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -846,14 +847,75 @@ public class Tacolandzoo {
        
     	public void paintComponent(Graphics g) 
         {
-        	
+    		//background/path color
+    		//g.setColor(Color.darkGray);
+    		g.setColor(	new Color(224,203,101));
+    		g.fillRect(0,0,1000,750);
+  
+    		//center oval
+    		g.setColor(new Color(34,177,76));
+    		g.fillOval(400,250,200,250);
+    	
+    		//left	buildings of oval
     		
-			g.setColor(Color. red);
-			
-			g.fillRect(0,0,1000,750);
-			
-				
+    		
+    		g.setColor(new Color(34,177,76));
+    		g.fillRect(0, 550, 1000, 150);    	    	
+    		g.fillRect(10, 325, 200, 150);
+    		g.fillRect(10,50,200,200);
+
+    		g.fillRect(10, 325, 200, 150);
+    		g.fillRect(245, 50, 130,420);
+    		g.fillRect(436, 50, 140, 180);
+    	//right buildings of oval
+    	
+    
+    		g.fillRect(10+775,50,200,200);
+
+    		g.fillRect(10+775, 325, 200, 150);
+    	g.fillRect(245+375, 50, 130,420);  
+    	
+    	//g.setColor(Color.black);
+//g.setColor(	new Color(224,203,101));
+//g.fillRect(100,800	, 500	, 500);
+   
+    //fence
+    	g.setColor(Color.black);
+    int x=0;
+    int y=10;
+    int w=245;
+    int a=436;
+
+    
+    
+while(x<10){
+		g.fillRect(y+775, 325,10, 150);
+    	g.fillRect(y, 325, 10, 150);
+    	g.fillRect(y,50,10,200);
+
+        	
+		g.fillRect(y+775,50,10,200);
+
 		
+    a+=20;	
+    w+=20;	
+	y+=20;
+		x++;
+	
+	
+	
+        }
+int s=245;
+int r=0;
+while (r<7){
+//		g.fillRect(s, 50, 10,420);
+    	
+ //   	g.fillRect(s+375, 50, 10,420);
+    	
+    	s+=20;
+    r++;
+}
+
         }
     }
     

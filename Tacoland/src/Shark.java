@@ -7,7 +7,7 @@ final public class Shark {
 	
 	public static final JFrame jframe = null;
 	JFrame frame;
-	DrawPanel drawPanel;
+	DrawShark drawPanel;
 	
 	private int oneX = 7;
 	private int oneY = 7;
@@ -27,7 +27,7 @@ final public class Shark {
 		frame = new JFrame("shARK");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		drawPanel = new DrawPanel();
+		drawPanel = new DrawShark();
 		
 		frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
 		
@@ -41,7 +41,7 @@ final public class Shark {
 	}
 
 	
-	class DrawPanel extends JPanel {
+	class DrawShark extends JPanel {
 		
 		 Bubble b1 = new Bubble();
 		 Bubble b2 = new Bubble();

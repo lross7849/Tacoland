@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.applet.*;
 
-public class Elephant extends Applet
+public class Elephant extends Applet 
 {
 	
 	/**
@@ -9,16 +9,17 @@ public class Elephant extends Applet
 	 */
 //	private static final long serialVersionUID = 1L;
 
-	public void DrawElephant(Graphics g)
+	
+
+    
+	public void paint(Graphics g)
 	{
-		drawHabitat(g);
-		drawAnimal(g);
+
 		
-	}
 	
 	
-	private void drawHabitat(Graphics g)
-	{
+	
+
 		//sky
 		g.setColor(new Color(65, 185, 250));
 		g.drawRect(0, 0, 1600, 1600);
@@ -104,9 +105,8 @@ public class Elephant extends Applet
 		g.drawOval(1110, 420, 60, 45); g.fillOval(1110, 420, 60, 45);
 		g.drawOval(1140, 420, 60, 45); g.fillOval(1140, 420, 60, 45);
 		g.drawOval(1170, 420, 60, 45); g.fillOval(1170, 420, 60, 45);
-	}
-	private void drawAnimal(Graphics g) 
-	{
+	
+
 		//BODY
 		g.setColor(new Color(128, 128, 128));
 		g.drawRoundRect(600, 450, 300, 200, 150, 125); g.fillRoundRect(600, 450, 300, 200, 150, 125);
@@ -128,6 +128,7 @@ public class Elephant extends Applet
 		//TAIL
 		
 		
-	}
 	
+	
+}
 }

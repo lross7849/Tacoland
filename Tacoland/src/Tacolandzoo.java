@@ -17,11 +17,13 @@ import javax.swing.SwingUtilities;
 
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
-	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe;
+	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe, 
+	DragonJframe, SharkJframe;
 	private ActionListener action;
-	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, BunbunButton, DolphinButton,
-	DragonButton, ElephantButton, FishButton, FlamingoButton, RabbitButton, PenguinButton, SnakeButton, bleopard, 
-	LionButton, bMeerkat, bmonkey, bMuntjac, bPandaBear, bShark, MainA, MainS, MainL, MainB2, MainB1;
+	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, 
+	BunbunButton, DolphinButton, DragonButton, ElephantButton, FishButton, FlamingoButton,
+	RabbitButton, PenguinButton, SnakeButton, LeopardButton, LionButton, MeerkatButton, MonkeyButton, 
+	MuntjacButton, PandaBearButton, SharkButton, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
     private int oneX = 7;
@@ -56,23 +58,49 @@ public class Tacolandzoo {
 		final SmallLandAnimalMapClass SmallLandAnimalMapPanel = new SmallLandAnimalMapClass();
 		final LargeLandAnimalMapClass LargeLandAnimalMapPanel = new LargeLandAnimalMapClass();
 
+		
+
+		
 		//Aquatic Land Animals' classes extending DrawPanels
-		final jPenguin pBird = new jPenguin(); 
-		final jPenguin.DrawPenguinPanel PenguinPanel = pBird.new DrawPenguinPanel();
+		final jPenguin xjPenguin = new jPenguin(); 
+		final jPenguin.DrawPenguinPanel PenguinPanel = xjPenguin.new DrawPenguinPanel();
 		
 		final FishClass FishPanel = new FishClass();
 		
+		final Shark xShark = new Shark();
+		final Shark.DrawShark SharkPanel = xShark.new DrawShark();
+		
 		
 		//Small Land Animals' classes extending DrawPanels
-		final Bunbun Bunn = new Bunbun();
-		final Bunbun.DrawBunbun BunbunPanel = Bunn.new DrawBunbun();
+		final Bunbun xBunbun = new Bunbun();
+		final Bunbun.DrawBunbun BunbunPanel = xBunbun.new DrawBunbun();
+		//changed drawBunbun to DrawBunbun
 		
-		final habitat Rab = new habitat();
-		final habitat.DrawRabbit drawRabbitPanel = Rab.new DrawRabbit();
-
+		final habitat xhabitat = new habitat();
+		final habitat.DrawRabbit RabbitPanel = xhabitat.new DrawRabbit();
+		//change to RabbitPanel
+		
+		
+		
 		
 		//Large Land Animals' classes extending DrawPanels
+		final dragon xdragon = new dragon();
+		final dragon.DrawCow DragonPanel = xdragon.new DrawCow();
 		
+		
+		
+		//final Elephant xElephant = new Elephant();
+	//	final Elephant.DrawElephant ElephantPanel = xElephant DrawElephant();
+		
+		/**
+		
+		final leopard xleopard = new leopard();
+		final leopard.DrawLeopard LeopardPanel = xleopard.new DrawLeopard();
+		
+		final Lion xLion = new Lion();
+		final Lion.DrawLion LionPanel = xLion.new DrawLion
+		
+		**/
 		
 	//Declaring buttons and their names
 		//Zoo's main slide buttons
@@ -92,15 +120,16 @@ public class Tacolandzoo {
 		DolphinButton = new JButton("Dolphine");
 		PenguinButton = new JButton ("Penguin");
 		FishButton = new JButton ("Fish");
-	
+		SharkButton = new JButton("Shark");
 		
 		//Small Animals buttons
 		BunbunButton = new JButton("Bunbun");
 		RabbitButton = new JButton("Rabbit");
 		
 		//Large Animals buttons
-		DragonButton = new JButton("Dragon");
+		DragonButton = new JButton("Cow");
 		ElephantButton = new JButton("Elephant");
+		LeopardButton = new JButton("Leopard");
 		
 		
 		action = new ActionListener()
@@ -161,7 +190,7 @@ public class Tacolandzoo {
 					AquaticPanel.add(DolphinButton);
 					AquaticPanel.add(PenguinButton);
 					AquaticPanel.add(FishButton);
-
+					AquaticPanel.add(SharkButton);
 			
 					//add animal Tacolandzoo later
 				
@@ -275,7 +304,7 @@ public class Tacolandzoo {
 					
 					
 					
-					 RabbitJframe.getContentPane().add(drawRabbitPanel);
+					 RabbitJframe.getContentPane().add(RabbitPanel);
 					 RabbitJframe.setSize(lsize, hsize);
 					 RabbitJframe.setLocation(xloc,yloc);
 					 RabbitJframe.setResizable(true);
@@ -329,8 +358,43 @@ public class Tacolandzoo {
 					 
 				 }
 				 
+				 if (button==DragonButton){
+					 
+					 DragonJframe = new JFrame("cowwwwwww");
+					 DragonJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 DragonJframe.setLocationByPlatform(true);
+					
+					
+					
+					 DragonJframe.getContentPane().add(DragonPanel);
+					 DragonJframe.setSize(lsize, hsize);
+					 DragonJframe.setLocation(xloc,yloc);
+					 DragonJframe.setResizable(true);
+						
+					 DragonJframe.setVisible(true);
+						LargeLandAnimalMapJframe.setVisible(false);
+					 
+				 }
 				 
-				 
+				 if (button==SharkButton){
+					 
+					 SharkJframe = new JFrame("Shark");
+					 SharkJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 SharkJframe.setLocationByPlatform(true);
+					
+					
+					
+					 SharkJframe.getContentPane().add(SharkPanel);
+					 SharkJframe.setSize(lsize, hsize);
+					 SharkJframe.setLocation(xloc,yloc);
+					 SharkJframe.setResizable(true);
+						
+					 SharkJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+					 
+					 
+				 }
 				 
 			}
 
@@ -353,7 +417,8 @@ public class Tacolandzoo {
 		DolphinButton.addActionListener(action);
 		PenguinButton.addActionListener(action);
 		FishButton.addActionListener(action);
-
+		SharkButton.addActionListener(action);
+		
 		//Small Land Animals' Action Listeners
 		BunbunButton.addActionListener(action);
 		RabbitButton.addActionListener(action);
@@ -384,7 +449,7 @@ public class Tacolandzoo {
 			public void run()
 			{
 				//The thing that creates the greatest impact on the project
-				new Tacolandzoo().MainMethod(); 
+				//new Tacolandzoo().MainMethod(); 
 			}
 		});
 		
@@ -931,7 +996,7 @@ while (r<7){
     		//background/path color
     		//g.setColor(Color.darkGray);
     		g.setColor(	new Color(224,203,101));
-    		g.setColor(new Color(150,150,150));
+    		g.setColor(new Color(255,153+30,51+30));
     		g.fillRect(0,0,1000,750);
   
     		//center oval

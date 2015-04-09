@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -501,7 +502,7 @@ public class Tacolandzoo {
 			public void run()
 			{
 				//The thing that creates the greatest impact on the project
-			//	new Tacolandzoo().MainMethod(); 
+			///	new Tacolandzoo().MainMethod(); 
 			}
 		});
 		
@@ -964,39 +965,59 @@ public class Tacolandzoo {
        
     	public void paintComponent(Graphics g) 
         {
-    		//background/path color
-    		//g.setColor(Color.darkGray);
+   		//background/path color
+    		
     		g.setColor(	new Color(224,203,101));
     		g.fillRect(0,0,1000,750);
-  
+    	
     		//center oval
     		g.setColor(new Color(34,177,76));
     		g.fillOval(400,250,200,250);
-    	
+    		//centeroval water
+    		g.setColor(new Color(71,141,245));
+    		g.fillOval(425, 280, 150, 200);
+    		
+    	//flamingo in pond
+    		g.setColor(Color.pink);
+    		
+    		g.fillOval(900-450,560-200,60,45);
+    		
+    		g.setColor(Color.pink);
+    		
+    		g.fillRect(1000-510, 500-180, 15,75);
+    		//head (x, y, width, length  x and width, y and length)
+    		g.fillOval(993-510, 460-170, 60, 50);
+    		
+    		g.setColor(Color.black);
+    		g.fillOval(1035-520,475-180,5,5);
+    		
+    		//beak
+    		
+    		g.setColor(Color.orange);
+    	g.fillRect(1045-510, 480-175, 30, 20);
+    		
+    		
+    		
+    		
+    		g.setColor(new Color (128,64,64));
+    		g.fillRect(940-453, 647-245, 5, 60);
+    		g.fillRect(980-487,647-250,5,70);
     		//left	buildings of oval
-    		
-    		
     		g.setColor(new Color(34,177,76));
     		g.fillRect(0, 550, 1000, 150);    	    	
     		g.fillRect(10, 325, 200, 150);
     		g.fillRect(10,50,200,200);
-
     		g.fillRect(10, 325, 200, 150);
     		g.fillRect(245, 50, 130,420);
     		g.fillRect(436, 50, 140, 180);
+    		
     	//right buildings of oval
-    	
-    
+    	    
     		g.fillRect(10+775,50,200,200);
-
     		g.fillRect(10+775, 325, 200, 150);
-    	g.fillRect(245+375, 50, 130,420);  
-    	
-    	//g.setColor(Color.black);
-//g.setColor(	new Color(224,203,101));
-//g.fillRect(100,800	, 500	, 500);
-   
-    //fence
+    		g.fillRect(245+375, 50, 130,420);  
+
+    //fence lines
     	g.setColor(Color.black);
     int x=0;
     int y=10;
@@ -1005,32 +1026,44 @@ public class Tacolandzoo {
 
     
     
-while(x<10){
-		g.fillRect(y+775, 325,10, 150);
-    	g.fillRect(y, 325, 10, 150);
-    	g.fillRect(y,50,10,200);
+while(x<21){
+		g.fillRect(y+775, 325,5, 150);
+    	g.fillRect(y, 325, 5, 150);
+    	g.fillRect(y,50,5,200);
 
         	
-		g.fillRect(y+775,50,10,200);
+		g.fillRect(y+775,50,5,200);
 
 		
     a+=20;	
     w+=20;	
-	y+=20;
+	y+=10;
 		x++;
 	
 	
 	
         }
-int s=245;
-int r=0;
-while (r<7){
-//		g.fillRect(s, 50, 10,420);
-    	
- //   	g.fillRect(s+375, 50, 10,420);
-    	
-    	s+=20;
-    r++;
+
+//entering path in bvetween the green
+	g.setColor(	new Color(224,203,101));
+	g.fillRect(460,500,100,600);
+//sign that says you are in the small animals habitat
+	g.setColor(new Color(220,140,51));
+	g.fillRect(660,600,20, 80);	
+	Graphics2D CL5 = (Graphics2D) g;
+	GradientPaint CL6 = new GradientPaint(25, 200,
+	new Color(250,250,250), 100, 100,  new Color(209,180,12), true);
+	CL5.setPaint(CL6);
+	g.fillRect(620,590,100,50);
+	//sign letters
+	Font thefont=new Font ("Garamond",Font.BOLD,15);
+	g.setColor(Color.black);
+	g.setFont(thefont);
+	g.drawString("You are in the",620 , 605);
+	g.drawString(" small animals' ",620 , 620);
+	g.drawString("       habitat     ",620 , 633);
+	g.setColor(Color.white);
+	g.fillOval(455,425,25,35);
 }
 
         }
@@ -1214,6 +1247,6 @@ while (r<7){
     }
 
     
-}
+
 
 

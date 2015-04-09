@@ -7,7 +7,7 @@ final public class Zebra {
 
 JFrame frame;
 
-DrawPanel DrawZebra;
+DrawZebra DrawZebra;
 
 private int oneX = 7;
 
@@ -32,11 +32,11 @@ new Zebra().go();
 
 private void go() {
 
-frame = new JFrame("Test");
+frame = new JFrame("Zebra");
 
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-DrawZebra = new DrawPanel();
+DrawZebra = new DrawZebra();
 
 frame.getContentPane().add(BorderLayout.CENTER, DrawZebra);
 
@@ -52,7 +52,7 @@ moveIt();
 
 }
 
-class DrawPanel extends JPanel {
+class DrawZebra extends JPanel {
 
 public void paintComponent(Graphics g) {
 	

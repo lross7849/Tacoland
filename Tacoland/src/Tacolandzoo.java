@@ -18,12 +18,12 @@ import javax.swing.SwingUtilities;
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
 	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe, 
-	DragonJframe, SharkJframe,HippoJframe;
+	DragonJframe, SharkJframe,HippoJframe, ZebraJframe, SnowLeopardJframe;
 	private ActionListener action;
 	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, 
 	BunbunButton, DolphinButton, DragonButton, ElephantButton, FishButton, FlamingoButton,
 	RabbitButton, PenguinButton, SnakeButton, LeopardButton, LionButton, MeerkatButton, MonkeyButton, 
-	MuntjacButton, PandaBearButton,HippoButton, SharkButton, MainA, MainS, MainL, MainB2, MainB1;
+	MuntjacButton, PandaBearButton,HippoButton, SharkButton,ZebraButton, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
     private int oneX = 7;
@@ -74,13 +74,12 @@ public class Tacolandzoo {
 		//Small Land Animals' classes extending DrawPanels
 		final Bunbun xBunbun = new Bunbun();
 		final Bunbun.DrawBunbun BunbunPanel = xBunbun.new DrawBunbun();
-		//changed drawBunbun to DrawBunbun
 		
 		final habitat xhabitat = new habitat();
 		final habitat.DrawRabbit RabbitPanel = xhabitat.new DrawRabbit();
-		//change to RabbitPanel
-		
-		
+
+		//final SwingSnowLeopard xSwingSnowLeopard = new SwingSnowLeopard();
+		//final SwingSnowLeopard.DrawSnowLeopard SnowLeopardPanel = xSwingSnowLeopard.new DrawSnowLeopard();
 		
 		
 		//Large Land Animals' classes extending DrawPanels
@@ -90,7 +89,8 @@ public class Tacolandzoo {
 		final hippo xHippo = new hippo();
 		final hippo.DrawHippo HippoPanel = xHippo.new DrawHippo();
 		
-		
+		final Zebra xZebra = new Zebra();
+		final Zebra.DrawZebra ZebraPanel = xZebra.new DrawZebra();
 		
 		
 		
@@ -136,6 +136,7 @@ public class Tacolandzoo {
 		ElephantButton = new JButton("Elephant");
 		LeopardButton = new JButton("Leopard");
 		HippoButton = new JButton("Hippo");
+		ZebraButton = new JButton("Zebra");
 		
 		action = new ActionListener()
 		{
@@ -238,6 +239,7 @@ public class Tacolandzoo {
 					LargeLandAnimalMapPanel.add(DragonButton);
 					LargeLandAnimalMapPanel.add(ElephantButton);
 					LargeLandAnimalMapPanel.add(HippoButton);
+					LargeLandAnimalMapPanel.add(ZebraButton);
 
 					//add animal Tacolandzoo later
 				
@@ -405,14 +407,14 @@ public class Tacolandzoo {
 				 
 				 if (button==HippoButton){
 					 
-					 HippoJframe = new JFrame("Shark");
+					 HippoJframe = new JFrame("Hippo");
 					 HippoJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					 HippoJframe.setLocationByPlatform(true);
 					
 					
 					
 					 HippoJframe.getContentPane().add(HippoPanel);
-					 HippoJframe.setSize(1500, hsize);
+					 HippoJframe.setSize(lsize, hsize);
 					 HippoJframe.setLocation(xloc,yloc);
 					 HippoJframe.setResizable(true);
 						
@@ -423,6 +425,27 @@ public class Tacolandzoo {
 					 
 				 }
 				 
+				 if (button == ZebraButton){
+					 
+					 ZebraJframe = new JFrame("Zebra");
+					 ZebraJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 ZebraJframe.setLocationByPlatform(true);
+					
+					
+					
+					 ZebraJframe.getContentPane().add(ZebraPanel);
+					 ZebraJframe.setSize(1500, hsize);
+					 ZebraJframe.setLocation(xloc,yloc);
+					 ZebraJframe.setResizable(true);
+						
+					 ZebraJframe.setVisible(true);
+						LargeLandAnimalMapJframe.setVisible(false);
+					 
+					 
+				 }
+			
+				 
+			
 			}
 
 		
@@ -454,6 +477,7 @@ public class Tacolandzoo {
 		DragonButton.addActionListener(action);
 		ElephantButton.addActionListener(action);
 		HippoButton.addActionListener(action);
+		ZebraButton.addActionListener(action);
 		
 		
 		WelcomePanel.add(WelcomeButton);

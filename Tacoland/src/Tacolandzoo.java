@@ -22,7 +22,7 @@ public class Tacolandzoo {
 	private ActionListener action;
 	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, 
 	BunbunButton, DolphinButton, DragonButton, ElephantButton, FishButton, FlamingoButton,
-	RabbitButton, PenguinButton, SnakeButton, LeopardButton, LionButton, MeerkatButton, MonkeyButton, 
+	RabbitButton, PenguinButton, SnakeButton, SnowLeopardButton, LionButton, MeerkatButton, MonkeyButton, 
 	MuntjacButton, PandaBearButton,HippoButton, SharkButton,ZebraButton, MainA, MainS, MainL, MainB2, MainB1;
 	
 	
@@ -134,7 +134,7 @@ public class Tacolandzoo {
 		//Large Animals buttons
 		DragonButton = new JButton("Cow");
 		ElephantButton = new JButton("Elephant");
-		LeopardButton = new JButton("Leopard");
+		SnowLeopardButton = new JButton("Snow Leopard");
 		HippoButton = new JButton("Hippo");
 		ZebraButton = new JButton("Zebra");
 		
@@ -198,8 +198,6 @@ public class Tacolandzoo {
 					AquaticPanel.add(FishButton);
 					AquaticPanel.add(SharkButton);
 			
-					//add animal Tacolandzoo later
-				
 					AquaticMapJframe.getContentPane().add(AquaticPanel);
 					AquaticMapJframe.setSize(lsize, hsize);
 					AquaticMapJframe.setLocation(xloc,yloc);
@@ -219,6 +217,7 @@ public class Tacolandzoo {
 					SmallLandAnimalMapPanel.add(MainS);
 					SmallLandAnimalMapPanel.add(BunbunButton);
 					SmallLandAnimalMapPanel.add(RabbitButton);
+					SmallLandAnimalMapPanel.add(SnowLeopardButton);
 				
 					SmallLandAnimalMapJframe.getContentPane().add(SmallLandAnimalMapPanel);
 					SmallLandAnimalMapJframe.setSize(lsize, hsize);
@@ -472,6 +471,7 @@ public class Tacolandzoo {
 		//Small Land Animals' Action Listeners
 		BunbunButton.addActionListener(action);
 		RabbitButton.addActionListener(action);
+		SnowLeopardButton.addActionListener(action);
 		
 		//Large Land Animals' Action Listeners
 		DragonButton.addActionListener(action);
@@ -501,7 +501,7 @@ public class Tacolandzoo {
 			public void run()
 			{
 				//The thing that creates the greatest impact on the project
-				new Tacolandzoo().MainMethod(); 
+			//	new Tacolandzoo().MainMethod(); 
 			}
 		});
 		
@@ -1074,9 +1074,7 @@ while (r<7){
     		g.fillRect(10+775, 325, 200, 150);
     	g.fillRect(245+375, 50, 130,420);  
     	
-    	//g.setColor(Color.black);
-//g.setColor(	new Color(224,203,101));
-//g.fillRect(100,800	, 500	, 500);
+
    
     //fence
     	g.setColor(Color.black);

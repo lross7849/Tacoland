@@ -35,7 +35,7 @@ public class SwingSnowLeopard {
 
 		private void go() {
 
-		frame = new JFrame("Test");
+		frame = new JFrame("SnowLeopard");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -51,14 +51,11 @@ public class SwingSnowLeopard {
 
 		frame.setLocation(3, 4);
 
-		moveIt();
+		
 
 		}
 
-		private void moveIt() {
-			// TODO Auto-generated method stub
-			
-		}
+
 
 		class DrawSnowLeopard extends JPanel {
 

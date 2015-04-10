@@ -1103,7 +1103,7 @@ g.setColor(Color.gray);
 g.setColor(Color.white);
 	g.fillOval(253+150,480+100,40,40);
 g.setColor(Color.gray);
-	g.drawOval(253+150,48+552,40,40);
+	g.drawOval(253+150,48+533,40,40);
 g.setColor(Color.white);
 	g.fillOval(253+150, 450+100, 15, 55);
 	g.fillOval(278+150, 450+100, 15, 55);

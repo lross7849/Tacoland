@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -992,7 +993,7 @@ public class Tacolandzoo {
        
     	public void paintComponent(Graphics g) 
         {
-   		//background/path color
+    		//background/path color
     		
     		g.setColor(	new Color(224,203,101));
     		g.fillRect(0,0,1000,750);
@@ -1091,6 +1092,43 @@ while(x<21){
 	g.drawString("       habitat     ",620 , 633);
 	g.setColor(Color.white);
 	g.fillOval(455,425,25,35);
+	
+	//white bunbun
+	g.setColor(Color.white);
+	g.fillOval(248+150,500+100,50,60);
+g.setColor(Color.gray);
+	g.drawOval(248+150,500+100,50,60);
+	g.drawOval(253+150, 450+100, 15, 55);
+	g.drawOval(278+150, 450+100, 15, 55);
+g.setColor(Color.white);
+	g.fillOval(253+150,480+100,40,40);
+g.setColor(Color.gray);
+	g.drawOval(253+150,48+552,40,40);
+g.setColor(Color.white);
+	g.fillOval(253+150, 450+100, 15, 55);
+	g.fillOval(278+150, 450+100, 15, 55);
+	g.fillOval(242+150,515+100,20,25);
+	g.fillOval(285+150,515+100,20,25);
+	g.fillOval(240+150,545+100,30,25);
+	g.fillOval(272+150,545+100,30,25);
+g.setColor(Color.gray);
+	g.drawOval(242+150,515+100,20,25);
+	g.drawOval(285+150,515+100,20,25);
+	g.drawOval(240+150,545+100,30,25);
+	g.drawOval(272+150,545+100,30,25);
+g.setColor(Color.gray);
+	g.drawOval(259+150,489+104,10,1);
+	g.drawOval(277+150,489+100,10,9);
+g.setColor(Color.black);
+	g.fillOval(279+150,491+100,4,5);
+	g.fillOval(277+150,491+100,4,5);
+g.setColor(Color.black);
+	g.drawOval(273+150,498+101,15,15);
+	g.drawOval(260+150-1,498+101,15,15);
+g.setColor(Color.white);
+	g.fillRect(257+150, 498+101, 33,5 );
+g.setColor(Color.black);
+	g.fillRect(270+151, 500+100, 6,6);
 }
 
         }

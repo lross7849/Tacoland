@@ -19,12 +19,13 @@ import javax.swing.SwingUtilities;
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
 	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe, 
-	DragonJframe, SharkJframe,HippoJframe, ZebraJframe, SnowLeopardJframe;
+	DragonJframe, SharkJframe,HippoJframe, ZebraJframe, SnowLeopardJframe,SquidJframe;
 	private ActionListener action;
 	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, 
 	BunbunButton, DolphinButton, DragonButton, ElephantButton, FishButton, FlamingoButton,
 	RabbitButton, PenguinButton, SnakeButton, SnowLeopardButton, LionButton, MeerkatButton, MonkeyButton, 
-	MuntjacButton, PandaBearButton,HippoButton, SharkButton,ZebraButton, MainA, MainS, MainL, MainB2, MainB1;
+	MuntjacButton, PandaBearButton,HippoButton, SharkButton,ZebraButton,SquidButton,
+	MainA, MainS, MainL, MainB2, MainB1;
 	
 	
     private int oneX = 7;
@@ -62,7 +63,7 @@ public class Tacolandzoo {
 		
 
 		
-		//Aquatic Land Animals' classes extending DrawPanels
+		//Aquatic Animals' classes extending DrawPanels
 		final jPenguin xjPenguin = new jPenguin(); 
 		final jPenguin.DrawPenguinPanel PenguinPanel = xjPenguin.new DrawPenguinPanel();
 		
@@ -70,6 +71,9 @@ public class Tacolandzoo {
 		
 		final Shark xShark = new Shark();
 		final Shark.DrawShark SharkPanel = xShark.new DrawShark();
+		
+		final Squid xSquid = new Squid();
+		final Squid.DrawSquid SquidPanel = xSquid.new DrawSquid();
 		
 		
 		//Small Land Animals' classes extending DrawPanels
@@ -127,6 +131,7 @@ public class Tacolandzoo {
 		PenguinButton = new JButton ("Penguin");
 		FishButton = new JButton ("Fish");
 		SharkButton = new JButton("Shark");
+		SquidButton = new JButton("Squid");
 		
 		//Small Animals buttons
 		BunbunButton = new JButton("Bunbun");
@@ -194,11 +199,12 @@ public class Tacolandzoo {
 					AquaticMapJframe.setLocationByPlatform(true);
 				
 					AquaticPanel.add(MainA);
-					AquaticPanel.add(DolphinButton);
+					AquaticPanel.add(SquidButton);
 					AquaticPanel.add(PenguinButton);
 					AquaticPanel.add(FishButton);
 					AquaticPanel.add(SharkButton);
 			
+					
 					AquaticMapJframe.getContentPane().add(AquaticPanel);
 					AquaticMapJframe.setSize(lsize, hsize);
 					AquaticMapJframe.setLocation(xloc,yloc);
@@ -434,7 +440,7 @@ public class Tacolandzoo {
 					
 					
 					 ZebraJframe.getContentPane().add(ZebraPanel);
-					 ZebraJframe.setSize(1500, hsize);
+					 ZebraJframe.setSize(lsize, hsize);
 					 ZebraJframe.setLocation(xloc,yloc);
 					 ZebraJframe.setResizable(true);
 						
@@ -444,6 +450,27 @@ public class Tacolandzoo {
 					 
 				 }
 			
+				 if (button==SquidButton){
+					 SquidJframe = new JFrame("Squid");
+					 SquidJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 SquidJframe.setLocationByPlatform(true);
+					
+					
+					
+					 SquidJframe.getContentPane().add(SquidPanel);
+					 SquidJframe.setSize(lsize, hsize);
+					 SquidJframe.setLocation(xloc,yloc);
+					 SquidJframe.setResizable(true);
+						
+					 SquidJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+					 
+					 
+				 }
+		
+				 
+				 
 				 
 			
 			}
@@ -464,7 +491,7 @@ public class Tacolandzoo {
 		MainB1.addActionListener(action);
 		
 		//Aquatic Animals' Action Listeners
-		DolphinButton.addActionListener(action);
+		SquidButton.addActionListener(action);
 		PenguinButton.addActionListener(action);
 		FishButton.addActionListener(action);
 		SharkButton.addActionListener(action);
@@ -502,7 +529,7 @@ public class Tacolandzoo {
 			public void run()
 			{
 				//The thing that creates the greatest impact on the project
-			///	new Tacolandzoo().MainMethod(); 
+				new Tacolandzoo().MainMethod(); 
 			}
 		});
 		

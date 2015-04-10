@@ -13,7 +13,7 @@ public class SwingSnowLeopard {
 
 		JFrame frame;
 
-		DrawSnowLeopard drawPanel;
+		DrawSnowLeopard DrawSnowLeopard;
 
 		private int oneX = 7;
 
@@ -39,9 +39,9 @@ public class SwingSnowLeopard {
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		drawPanel = new DrawSnowLeopard();
+		DrawSnowLeopard = new DrawSnowLeopard();
 
-		frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
+		frame.getContentPane().add(BorderLayout.CENTER, DrawSnowLeopard);
 
 		frame.setVisible(true);
 

@@ -20,10 +20,10 @@ import javax.swing.SwingUtilities;
 public class Tacolandzoo {
 	private JFrame WelcomeJframe, Branch1Jframe, Branch2Jframe, SmallLandAnimalMapJframe,
 	LargeLandAnimalMapJframe, AquaticMapJframe, PenguinJframe, FishJframe, BunbunJframe, RabbitJframe, 
-	DragonJframe, SharkJframe,HippoJframe, ZebraJframe, SnowLeopardJframe,SquidJframe;
+	DragonJframe, SharkJframe,HippoJframe, ZebraJframe, SnowLeopardJframe,SquidJframe, DolphinJframe, MeerKatJframe;
 	private ActionListener action;
 	private JButton WelcomeButton, LandButton, AquaticButton, SmallButton, LargeButton, 
-	BunbunButton, DolphinButton, DragonButton, ElephantButton, FishButton, FlamingoButton,
+	BunbunButton, DolphinButton, DragonButton, MeerKatButton, FishButton, FlamingoButton,
 	RabbitButton, PenguinButton, SnakeButton, SnowLeopardButton, LionButton, MeerkatButton, MonkeyButton, 
 	MuntjacButton, PandaBearButton,HippoButton, SharkButton,ZebraButton,SquidButton,
 	MainA, MainS, MainL, MainB2, MainB1;
@@ -68,6 +68,10 @@ public class Tacolandzoo {
 		final jPenguin xjPenguin = new jPenguin(); 
 		final jPenguin.DrawPenguinPanel PenguinPanel = xjPenguin.new DrawPenguinPanel();
 		
+		final Dolphin xDolphin = new Dolphin();
+		final Dolphin.DrawDolphin DolphinPanel = xDolphin.new DrawDolphin();
+		
+		
 		final FishClass FishPanel = new FishClass();
 		
 		final Shark xShark = new Shark();
@@ -83,6 +87,9 @@ public class Tacolandzoo {
 		
 		final habitat xhabitat = new habitat();
 		final habitat.DrawRabbit RabbitPanel = xhabitat.new DrawRabbit();
+		
+		final MeerKat xMeerKat = new MeerKat();
+		final MeerKat.DrawMeerKat MeerKatPanel = xMeerKat.new DrawMeerKat();
 
 		//final SwingSnowLeopard xSwingSnowLeopard = new SwingSnowLeopard();
 		//final SwingSnowLeopard.DrawSnowLeopard SnowLeopardPanel = xSwingSnowLeopard.new DrawSnowLeopard();
@@ -97,11 +104,6 @@ public class Tacolandzoo {
 		
 		final Zebra xZebra = new Zebra();
 		final Zebra.DrawZebra ZebraPanel = xZebra.new DrawZebra();
-		
-		
-		
-		//final Elephant xElephant = new Elephant();
-	//	final Elephant.DrawElephant ElephantPanel = xElephant DrawElephant();
 		
 		/**
 		
@@ -140,7 +142,7 @@ public class Tacolandzoo {
 		
 		//Large Animals buttons
 		DragonButton = new JButton("Cow");
-		ElephantButton = new JButton("Elephant");
+		MeerKatButton = new JButton("MeerKat");
 		SnowLeopardButton = new JButton("Snow Leopard");
 		HippoButton = new JButton("Hippo");
 		ZebraButton = new JButton("Zebra");
@@ -199,8 +201,10 @@ public class Tacolandzoo {
 					AquaticMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					AquaticMapJframe.setLocationByPlatform(true);
 				
+					//buttons for aquatic animals
 					AquaticPanel.add(MainA);
 					AquaticPanel.add(SquidButton);
+					AquaticPanel.add(DolphinButton);
 					AquaticPanel.add(PenguinButton);
 					AquaticPanel.add(FishButton);
 					AquaticPanel.add(SharkButton);
@@ -222,10 +226,11 @@ public class Tacolandzoo {
 					SmallLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					SmallLandAnimalMapJframe.setLocationByPlatform(true);
 				
+					//Buttons for small animals
 					SmallLandAnimalMapPanel.add(MainS);
 					SmallLandAnimalMapPanel.add(BunbunButton);
 					SmallLandAnimalMapPanel.add(RabbitButton);
-					SmallLandAnimalMapPanel.add(SnowLeopardButton);
+					SmallLandAnimalMapPanel.add(MeerKatButton);
 				
 					SmallLandAnimalMapJframe.getContentPane().add(SmallLandAnimalMapPanel);
 					SmallLandAnimalMapJframe.setSize(lsize, hsize);
@@ -242,13 +247,12 @@ public class Tacolandzoo {
 					LargeLandAnimalMapJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					LargeLandAnimalMapJframe.setLocationByPlatform(true);
 				
+					//Buttons for large animals
 					LargeLandAnimalMapPanel.add(MainL);
 					LargeLandAnimalMapPanel.add(DragonButton);
-					LargeLandAnimalMapPanel.add(ElephantButton);
 					LargeLandAnimalMapPanel.add(HippoButton);
 					LargeLandAnimalMapPanel.add(ZebraButton);
 
-					//add animal Tacolandzoo later
 				
 					LargeLandAnimalMapJframe.getContentPane().add(LargeLandAnimalMapPanel);
 					LargeLandAnimalMapJframe.setSize(lsize, hsize);
@@ -259,6 +263,7 @@ public class Tacolandzoo {
 					Branch2Jframe.setVisible(false);
 				}
 			
+				//Buttons that if clicked will redirect you back to previous Jframe
 				 if (button == MainA)
 				{
 					Branch1Jframe.setVisible(true);
@@ -291,6 +296,7 @@ public class Tacolandzoo {
 					 Branch1Jframe.setVisible(false);
 				 }
 				 
+				 //Buttons that if clicked will take you to that desired animal 
 				 
 				 if (button == BunbunButton){
 					 
@@ -470,8 +476,45 @@ public class Tacolandzoo {
 					 
 				 }
 		
+				 if (button == DolphinButton){
+					 DolphinJframe = new JFrame("Squid");
+					 DolphinJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 DolphinJframe.setLocationByPlatform(true);
+					
+					
+					
+					 DolphinJframe.getContentPane().add(DolphinPanel);
+					 DolphinJframe.setSize(lsize, hsize);
+					 DolphinJframe.setLocation(xloc,yloc);
+					 DolphinJframe.setResizable(true);
+						
+					 DolphinJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+					 
+					 
+					 
+					 
+					 
+				 }
 				 
-				 
+				 if (button==MeerKatButton){
+					 MeerKatJframe = new JFrame("Squid");
+					 MeerKatJframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 MeerKatJframe.setLocationByPlatform(true);
+					
+					
+					
+					 MeerKatJframe.getContentPane().add(MeerKatPanel);
+					 MeerKatJframe.setSize(lsize, hsize);
+					 MeerKatJframe.setLocation(xloc,yloc);
+					 MeerKatJframe.setResizable(true);
+						
+					 MeerKatJframe.setVisible(true);
+						AquaticMapJframe.setVisible(false);
+					 
+					 
+				 }
 				 
 			
 			}
@@ -496,15 +539,16 @@ public class Tacolandzoo {
 		PenguinButton.addActionListener(action);
 		FishButton.addActionListener(action);
 		SharkButton.addActionListener(action);
+		DolphinButton.addActionListener(action);
 		
 		//Small Land Animals' Action Listeners
 		BunbunButton.addActionListener(action);
 		RabbitButton.addActionListener(action);
 		SnowLeopardButton.addActionListener(action);
+		MeerKatButton.addActionListener(action);
 		
 		//Large Land Animals' Action Listeners
 		DragonButton.addActionListener(action);
-		ElephantButton.addActionListener(action);
 		HippoButton.addActionListener(action);
 		ZebraButton.addActionListener(action);
 		

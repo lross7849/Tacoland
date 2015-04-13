@@ -218,7 +218,7 @@ public class SwingSnowLeopard {
 
 		}
 
-		private void moveIt() {
+		 void moveIt() {
 
 		while(true){
 
